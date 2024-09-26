@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 传感器数据表(senskwkwordata)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_timestamp_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 时间戳 ******************** pie_v2***/ init_echart("echart_senskwkwordata_timestamp_pie_v2",'senskwkwordata.timestamp_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_timestamp_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 时间戳 ******************** pie_v1***/ init_echart("echart_senskwkwordata_timestamp_pie_v1",'senskwkwordata.timestamp_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_timestamp_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 时间戳 ******************** pie***/ init_echart("echart_senskwkwordata_timestamp_pie",'senskwkwordata.timestamp_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_timestamp_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 时间戳 ******************** line***/ init_echart("echart_senskwkwordata_timestamp_line",'senskwkwordata.timestamp_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_timestamp_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 时间戳 ******************** bar***/ init_echart("echart_senskwkwordata_timestamp_bar",'senskwkwordata.timestamp_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_timestamp_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 时间戳 ******************** bar_v1***/ init_echart("echart_senskwkwordata_timestamp_bar_v1",'senskwkwordata.timestamp_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_temperature_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 温度 ******************** pie_v2***/ init_echart("echart_senskwkwordata_temperature_pie_v2",'senskwkwordata.temperature_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_temperature_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 温度 ******************** pie_v1***/ init_echart("echart_senskwkwordata_temperature_pie_v1",'senskwkwordata.temperature_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_temperature_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 温度 ******************** pie***/ init_echart("echart_senskwkwordata_temperature_pie",'senskwkwordata.temperature_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_temperature_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 温度 ******************** line***/ init_echart("echart_senskwkwordata_temperature_line",'senskwkwordata.temperature_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_temperature_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 温度 ******************** bar***/ init_echart("echart_senskwkwordata_temperature_bar",'senskwkwordata.temperature_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_temperature_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 温度 ******************** bar_v1***/ init_echart("echart_senskwkwordata_temperature_bar_v1",'senskwkwordata.temperature_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_humidity_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 湿度 ******************** pie_v2***/ init_echart("echart_senskwkwordata_humidity_pie_v2",'senskwkwordata.humidity_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_humidity_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 湿度 ******************** pie_v1***/ init_echart("echart_senskwkwordata_humidity_pie_v1",'senskwkwordata.humidity_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_humidity_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 湿度 ******************** pie***/ init_echart("echart_senskwkwordata_humidity_pie",'senskwkwordata.humidity_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_humidity_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 湿度 ******************** line***/ init_echart("echart_senskwkwordata_humidity_line",'senskwkwordata.humidity_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_humidity_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 湿度 ******************** bar***/ init_echart("echart_senskwkwordata_humidity_bar",'senskwkwordata.humidity_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_humidity_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 湿度 ******************** bar_v1***/ init_echart("echart_senskwkwordata_humidity_bar_v1",'senskwkwordata.humidity_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_pressure_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 压力 ******************** pie_v2***/ init_echart("echart_senskwkwordata_pressure_pie_v2",'senskwkwordata.pressure_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_pressure_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 压力 ******************** pie_v1***/ init_echart("echart_senskwkwordata_pressure_pie_v1",'senskwkwordata.pressure_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_pressure_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 压力 ******************** pie***/ init_echart("echart_senskwkwordata_pressure_pie",'senskwkwordata.pressure_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_pressure_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 压力 ******************** line***/ init_echart("echart_senskwkwordata_pressure_line",'senskwkwordata.pressure_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_pressure_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 压力 ******************** bar***/ init_echart("echart_senskwkwordata_pressure_bar",'senskwkwordata.pressure_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_pressure_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 压力 ******************** bar_v1***/ init_echart("echart_senskwkwordata_pressure_bar_v1",'senskwkwordata.pressure_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_vibration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 振动强度 ******************** pie_v2***/ init_echart("echart_senskwkwordata_vibration_pie_v2",'senskwkwordata.vibration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_vibration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 振动强度 ******************** pie_v1***/ init_echart("echart_senskwkwordata_vibration_pie_v1",'senskwkwordata.vibration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_vibration_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 振动强度 ******************** pie***/ init_echart("echart_senskwkwordata_vibration_pie",'senskwkwordata.vibration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_vibration_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 振动强度 ******************** line***/ init_echart("echart_senskwkwordata_vibration_line",'senskwkwordata.vibration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_vibration_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 振动强度 ******************** bar***/ init_echart("echart_senskwkwordata_vibration_bar",'senskwkwordata.vibration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_vibration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 振动强度 ******************** bar_v1***/ init_echart("echart_senskwkwordata_vibration_bar_v1",'senskwkwordata.vibration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 状态如正常、异常 ******************** pie_v2***/ init_echart("echart_senskwkwordata_status_pie_v2",'senskwkwordata.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 状态如正常、异常 ******************** pie_v1***/ init_echart("echart_senskwkwordata_status_pie_v1",'senskwkwordata.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 状态如正常、异常 ******************** pie***/ init_echart("echart_senskwkwordata_status_pie",'senskwkwordata.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_status_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 状态如正常、异常 ******************** line***/ init_echart("echart_senskwkwordata_status_line",'senskwkwordata.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 状态如正常、异常 ******************** bar***/ init_echart("echart_senskwkwordata_status_bar",'senskwkwordata.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 状态如正常、异常 ******************** bar_v1***/ init_echart("echart_senskwkwordata_status_bar_v1",'senskwkwordata.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_location_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 位置 ******************** pie_v2***/ init_echart("echart_senskwkwordata_location_pie_v2",'senskwkwordata.location_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_location_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 位置 ******************** pie_v1***/ init_echart("echart_senskwkwordata_location_pie_v1",'senskwkwordata.location_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_senskwkwordata_location_pie" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 位置 ******************** pie***/ init_echart("echart_senskwkwordata_location_pie",'senskwkwordata.location_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_senskwkwordata_location_line" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 位置 ******************** line***/ init_echart("echart_senskwkwordata_location_line",'senskwkwordata.location_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_location_bar" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 位置 ******************** bar***/ init_echart("echart_senskwkwordata_location_bar",'senskwkwordata.location_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_senskwkwordata_location_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 传感器数据表 位置 ******************** bar_v1***/ init_echart("echart_senskwkwordata_location_bar_v1",'senskwkwordata.location_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

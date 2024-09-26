@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人固件更新表(robotfirmwareupdate)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_firmwareversion_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 固件版本号 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_firmwareversion_pie_v2",'robotfirmwareupdate.firmwareversion_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_firmwareversion_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 固件版本号 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_firmwareversion_pie_v1",'robotfirmwareupdate.firmwareversion_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_firmwareversion_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 固件版本号 ******************** pie***/ init_echart("echart_robotfirmwareupdate_firmwareversion_pie",'robotfirmwareupdate.firmwareversion_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_firmwareversion_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 固件版本号 ******************** line***/ init_echart("echart_robotfirmwareupdate_firmwareversion_line",'robotfirmwareupdate.firmwareversion_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_firmwareversion_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 固件版本号 ******************** bar***/ init_echart("echart_robotfirmwareupdate_firmwareversion_bar",'robotfirmwareupdate.firmwareversion_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_firmwareversion_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 固件版本号 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_firmwareversion_bar_v1",'robotfirmwareupdate.firmwareversion_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新日期 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_updatedate_pie_v2",'robotfirmwareupdate.updatedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新日期 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_updatedate_pie_v1",'robotfirmwareupdate.updatedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新日期 ******************** pie***/ init_echart("echart_robotfirmwareupdate_updatedate_pie",'robotfirmwareupdate.updatedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新日期 ******************** line***/ init_echart("echart_robotfirmwareupdate_updatedate_line",'robotfirmwareupdate.updatedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新日期 ******************** bar***/ init_echart("echart_robotfirmwareupdate_updatedate_bar",'robotfirmwareupdate.updatedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新日期 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_updatedate_bar_v1",'robotfirmwareupdate.updatedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatestatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新状态 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_updatestatus_pie_v2",'robotfirmwareupdate.updatestatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatestatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新状态 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_updatestatus_pie_v1",'robotfirmwareupdate.updatestatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatestatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新状态 ******************** pie***/ init_echart("echart_robotfirmwareupdate_updatestatus_pie",'robotfirmwareupdate.updatestatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatestatus_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新状态 ******************** line***/ init_echart("echart_robotfirmwareupdate_updatestatus_line",'robotfirmwareupdate.updatestatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatestatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新状态 ******************** bar***/ init_echart("echart_robotfirmwareupdate_updatestatus_bar",'robotfirmwareupdate.updatestatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatestatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新状态 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_updatestatus_bar_v1",'robotfirmwareupdate.updatestatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新描述 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_updatedescription_pie_v2",'robotfirmwareupdate.updatedescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新描述 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_updatedescription_pie_v1",'robotfirmwareupdate.updatedescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新描述 ******************** pie***/ init_echart("echart_robotfirmwareupdate_updatedescription_pie",'robotfirmwareupdate.updatedescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedescription_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新描述 ******************** line***/ init_echart("echart_robotfirmwareupdate_updatedescription_line",'robotfirmwareupdate.updatedescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新描述 ******************** bar***/ init_echart("echart_robotfirmwareupdate_updatedescription_bar",'robotfirmwareupdate.updatedescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新描述 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_updatedescription_bar_v1",'robotfirmwareupdate.updatedescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_previousfirmwareversion_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 前固件版本号 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_previousfirmwareversion_pie_v2",'robotfirmwareupdate.previousfirmwareversion_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_previousfirmwareversion_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 前固件版本号 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_previousfirmwareversion_pie_v1",'robotfirmwareupdate.previousfirmwareversion_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_previousfirmwareversion_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 前固件版本号 ******************** pie***/ init_echart("echart_robotfirmwareupdate_previousfirmwareversion_pie",'robotfirmwareupdate.previousfirmwareversion_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_previousfirmwareversion_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 前固件版本号 ******************** line***/ init_echart("echart_robotfirmwareupdate_previousfirmwareversion_line",'robotfirmwareupdate.previousfirmwareversion_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_previousfirmwareversion_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 前固件版本号 ******************** bar***/ init_echart("echart_robotfirmwareupdate_previousfirmwareversion_bar",'robotfirmwareupdate.previousfirmwareversion_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_previousfirmwareversion_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 前固件版本号 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_previousfirmwareversion_bar_v1",'robotfirmwareupdate.previousfirmwareversion_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedby_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新者 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_updatedby_pie_v2",'robotfirmwareupdate.updatedby_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedby_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新者 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_updatedby_pie_v1",'robotfirmwareupdate.updatedby_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedby_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新者 ******************** pie***/ init_echart("echart_robotfirmwareupdate_updatedby_pie",'robotfirmwareupdate.updatedby_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedby_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新者 ******************** line***/ init_echart("echart_robotfirmwareupdate_updatedby_line",'robotfirmwareupdate.updatedby_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedby_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新者 ******************** bar***/ init_echart("echart_robotfirmwareupdate_updatedby_bar",'robotfirmwareupdate.updatedby_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_updatedby_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 更新者 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_updatedby_bar_v1",'robotfirmwareupdate.updatedby_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_failurerekwkwason_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 失败原因 ******************** pie_v2***/ init_echart("echart_robotfirmwareupdate_failurerekwkwason_pie_v2",'robotfirmwareupdate.failurerekwkwason_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_failurerekwkwason_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 失败原因 ******************** pie_v1***/ init_echart("echart_robotfirmwareupdate_failurerekwkwason_pie_v1",'robotfirmwareupdate.failurerekwkwason_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_failurerekwkwason_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 失败原因 ******************** pie***/ init_echart("echart_robotfirmwareupdate_failurerekwkwason_pie",'robotfirmwareupdate.failurerekwkwason_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_failurerekwkwason_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 失败原因 ******************** line***/ init_echart("echart_robotfirmwareupdate_failurerekwkwason_line",'robotfirmwareupdate.failurerekwkwason_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_failurerekwkwason_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 失败原因 ******************** bar***/ init_echart("echart_robotfirmwareupdate_failurerekwkwason_bar",'robotfirmwareupdate.failurerekwkwason_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareupdate_failurerekwkwason_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件更新表 失败原因 ******************** bar_v1***/ init_echart("echart_robotfirmwareupdate_failurerekwkwason_bar_v1",'robotfirmwareupdate.failurerekwkwason_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

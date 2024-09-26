@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 安全监控日志表(safetymonitkwkworlog)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件类型 ******************** pie_v2***/ init_echart("echart_safetymonitkwkworlog_eventtype_pie_v2",'safetymonitkwkworlog.eventtype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件类型 ******************** pie_v1***/ init_echart("echart_safetymonitkwkworlog_eventtype_pie_v1",'safetymonitkwkworlog.eventtype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtype_pie" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件类型 ******************** pie***/ init_echart("echart_safetymonitkwkworlog_eventtype_pie",'safetymonitkwkworlog.eventtype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtype_line" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件类型 ******************** line***/ init_echart("echart_safetymonitkwkworlog_eventtype_line",'safetymonitkwkworlog.eventtype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtype_bar" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件类型 ******************** bar***/ init_echart("echart_safetymonitkwkworlog_eventtype_bar",'safetymonitkwkworlog.eventtype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件类型 ******************** bar_v1***/ init_echart("echart_safetymonitkwkworlog_eventtype_bar_v1",'safetymonitkwkworlog.eventtype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件发生时间 ******************** pie_v2***/ init_echart("echart_safetymonitkwkworlog_eventtime_pie_v2",'safetymonitkwkworlog.eventtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件发生时间 ******************** pie_v1***/ init_echart("echart_safetymonitkwkworlog_eventtime_pie_v1",'safetymonitkwkworlog.eventtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件发生时间 ******************** pie***/ init_echart("echart_safetymonitkwkworlog_eventtime_pie",'safetymonitkwkworlog.eventtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtime_line" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件发生时间 ******************** line***/ init_echart("echart_safetymonitkwkworlog_eventtime_line",'safetymonitkwkworlog.eventtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件发生时间 ******************** bar***/ init_echart("echart_safetymonitkwkworlog_eventtime_bar",'safetymonitkwkworlog.eventtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件发生时间 ******************** bar_v1***/ init_echart("echart_safetymonitkwkworlog_eventtime_bar_v1",'safetymonitkwkworlog.eventtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventdescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件描述 ******************** pie_v2***/ init_echart("echart_safetymonitkwkworlog_eventdescription_pie_v2",'safetymonitkwkworlog.eventdescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventdescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件描述 ******************** pie_v1***/ init_echart("echart_safetymonitkwkworlog_eventdescription_pie_v1",'safetymonitkwkworlog.eventdescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventdescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件描述 ******************** pie***/ init_echart("echart_safetymonitkwkworlog_eventdescription_pie",'safetymonitkwkworlog.eventdescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventdescription_line" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件描述 ******************** line***/ init_echart("echart_safetymonitkwkworlog_eventdescription_line",'safetymonitkwkworlog.eventdescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventdescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件描述 ******************** bar***/ init_echart("echart_safetymonitkwkworlog_eventdescription_bar",'safetymonitkwkworlog.eventdescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_eventdescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 事件描述 ******************** bar_v1***/ init_echart("echart_safetymonitkwkworlog_eventdescription_bar_v1",'safetymonitkwkworlog.eventdescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_severity_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 严重程度 ******************** pie_v2***/ init_echart("echart_safetymonitkwkworlog_severity_pie_v2",'safetymonitkwkworlog.severity_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_severity_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 严重程度 ******************** pie_v1***/ init_echart("echart_safetymonitkwkworlog_severity_pie_v1",'safetymonitkwkworlog.severity_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_severity_pie" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 严重程度 ******************** pie***/ init_echart("echart_safetymonitkwkworlog_severity_pie",'safetymonitkwkworlog.severity_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_severity_line" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 严重程度 ******************** line***/ init_echart("echart_safetymonitkwkworlog_severity_line",'safetymonitkwkworlog.severity_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_severity_bar" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 严重程度 ******************** bar***/ init_echart("echart_safetymonitkwkworlog_severity_bar",'safetymonitkwkworlog.severity_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_severity_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 严重程度 ******************** bar_v1***/ init_echart("echart_safetymonitkwkworlog_severity_bar_v1",'safetymonitkwkworlog.severity_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_actiontaken_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 采取的措施 ******************** pie_v2***/ init_echart("echart_safetymonitkwkworlog_actiontaken_pie_v2",'safetymonitkwkworlog.actiontaken_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_actiontaken_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 采取的措施 ******************** pie_v1***/ init_echart("echart_safetymonitkwkworlog_actiontaken_pie_v1",'safetymonitkwkworlog.actiontaken_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_actiontaken_pie" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 采取的措施 ******************** pie***/ init_echart("echart_safetymonitkwkworlog_actiontaken_pie",'safetymonitkwkworlog.actiontaken_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_actiontaken_line" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 采取的措施 ******************** line***/ init_echart("echart_safetymonitkwkworlog_actiontaken_line",'safetymonitkwkworlog.actiontaken_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_actiontaken_bar" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 采取的措施 ******************** bar***/ init_echart("echart_safetymonitkwkworlog_actiontaken_bar",'safetymonitkwkworlog.actiontaken_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_safetymonitkwkworlog_actiontaken_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 安全监控日志表 采取的措施 ******************** bar_v1***/ init_echart("echart_safetymonitkwkworlog_actiontaken_bar_v1",'safetymonitkwkworlog.actiontaken_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

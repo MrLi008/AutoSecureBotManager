@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 巡检结果表(inspectionresult)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectionid_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检编号 ******************** pie_v2***/ init_echart("echart_inspectionresult_inspectionid_pie_v2",'inspectionresult.inspectionid_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectionid_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检编号 ******************** pie_v1***/ init_echart("echart_inspectionresult_inspectionid_pie_v1",'inspectionresult.inspectionid_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectionid_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检编号 ******************** pie***/ init_echart("echart_inspectionresult_inspectionid_pie",'inspectionresult.inspectionid_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_inspectionid_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检编号 ******************** line***/ init_echart("echart_inspectionresult_inspectionid_line",'inspectionresult.inspectionid_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_inspectionid_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检编号 ******************** bar***/ init_echart("echart_inspectionresult_inspectionid_bar",'inspectionresult.inspectionid_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_inspectionid_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检编号 ******************** bar_v1***/ init_echart("echart_inspectionresult_inspectionid_bar_v1",'inspectionresult.inspectionid_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectiontime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检时间 ******************** pie_v2***/ init_echart("echart_inspectionresult_inspectiontime_pie_v2",'inspectionresult.inspectiontime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectiontime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检时间 ******************** pie_v1***/ init_echart("echart_inspectionresult_inspectiontime_pie_v1",'inspectionresult.inspectiontime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectiontime_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检时间 ******************** pie***/ init_echart("echart_inspectionresult_inspectiontime_pie",'inspectionresult.inspectiontime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_inspectiontime_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检时间 ******************** line***/ init_echart("echart_inspectionresult_inspectiontime_line",'inspectionresult.inspectiontime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_inspectiontime_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检时间 ******************** bar***/ init_echart("echart_inspectionresult_inspectiontime_bar",'inspectionresult.inspectiontime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_inspectiontime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检时间 ******************** bar_v1***/ init_echart("echart_inspectionresult_inspectiontime_bar_v1",'inspectionresult.inspectiontime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_robotid_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 机器人编号 ******************** pie_v2***/ init_echart("echart_inspectionresult_robotid_pie_v2",'inspectionresult.robotid_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_robotid_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 机器人编号 ******************** pie_v1***/ init_echart("echart_inspectionresult_robotid_pie_v1",'inspectionresult.robotid_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_robotid_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 机器人编号 ******************** pie***/ init_echart("echart_inspectionresult_robotid_pie",'inspectionresult.robotid_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_robotid_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 机器人编号 ******************** line***/ init_echart("echart_inspectionresult_robotid_line",'inspectionresult.robotid_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_robotid_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 机器人编号 ******************** bar***/ init_echart("echart_inspectionresult_robotid_bar",'inspectionresult.robotid_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_robotid_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 机器人编号 ******************** bar_v1***/ init_echart("echart_inspectionresult_robotid_bar_v1",'inspectionresult.robotid_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_safetystatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 安全状态 ******************** pie_v2***/ init_echart("echart_inspectionresult_safetystatus_pie_v2",'inspectionresult.safetystatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_safetystatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 安全状态 ******************** pie_v1***/ init_echart("echart_inspectionresult_safetystatus_pie_v1",'inspectionresult.safetystatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_safetystatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 安全状态 ******************** pie***/ init_echart("echart_inspectionresult_safetystatus_pie",'inspectionresult.safetystatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_safetystatus_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 安全状态 ******************** line***/ init_echart("echart_inspectionresult_safetystatus_line",'inspectionresult.safetystatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_safetystatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 安全状态 ******************** bar***/ init_echart("echart_inspectionresult_safetystatus_bar",'inspectionresult.safetystatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_safetystatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 安全状态 ******************** bar_v1***/ init_echart("echart_inspectionresult_safetystatus_bar_v1",'inspectionresult.safetystatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_faultdescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 故障描述 ******************** pie_v2***/ init_echart("echart_inspectionresult_faultdescription_pie_v2",'inspectionresult.faultdescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_faultdescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 故障描述 ******************** pie_v1***/ init_echart("echart_inspectionresult_faultdescription_pie_v1",'inspectionresult.faultdescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_faultdescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 故障描述 ******************** pie***/ init_echart("echart_inspectionresult_faultdescription_pie",'inspectionresult.faultdescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_faultdescription_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 故障描述 ******************** line***/ init_echart("echart_inspectionresult_faultdescription_line",'inspectionresult.faultdescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_faultdescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 故障描述 ******************** bar***/ init_echart("echart_inspectionresult_faultdescription_bar",'inspectionresult.faultdescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_faultdescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 故障描述 ******************** bar_v1***/ init_echart("echart_inspectionresult_faultdescription_bar_v1",'inspectionresult.faultdescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairstatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修状态 ******************** pie_v2***/ init_echart("echart_inspectionresult_repairstatus_pie_v2",'inspectionresult.repairstatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairstatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修状态 ******************** pie_v1***/ init_echart("echart_inspectionresult_repairstatus_pie_v1",'inspectionresult.repairstatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairstatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修状态 ******************** pie***/ init_echart("echart_inspectionresult_repairstatus_pie",'inspectionresult.repairstatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_repairstatus_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修状态 ******************** line***/ init_echart("echart_inspectionresult_repairstatus_line",'inspectionresult.repairstatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_repairstatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修状态 ******************** bar***/ init_echart("echart_inspectionresult_repairstatus_bar",'inspectionresult.repairstatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_repairstatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修状态 ******************** bar_v1***/ init_echart("echart_inspectionresult_repairstatus_bar_v1",'inspectionresult.repairstatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectkwkwor_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检员 ******************** pie_v2***/ init_echart("echart_inspectionresult_inspectkwkwor_pie_v2",'inspectionresult.inspectkwkwor_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectkwkwor_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检员 ******************** pie_v1***/ init_echart("echart_inspectionresult_inspectkwkwor_pie_v1",'inspectionresult.inspectkwkwor_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_inspectkwkwor_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检员 ******************** pie***/ init_echart("echart_inspectionresult_inspectkwkwor_pie",'inspectionresult.inspectkwkwor_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_inspectkwkwor_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检员 ******************** line***/ init_echart("echart_inspectionresult_inspectkwkwor_line",'inspectionresult.inspectkwkwor_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_inspectkwkwor_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检员 ******************** bar***/ init_echart("echart_inspectionresult_inspectkwkwor_bar",'inspectionresult.inspectkwkwor_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_inspectkwkwor_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 巡检员 ******************** bar_v1***/ init_echart("echart_inspectionresult_inspectkwkwor_bar_v1",'inspectionresult.inspectkwkwor_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairer_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修人员 ******************** pie_v2***/ init_echart("echart_inspectionresult_repairer_pie_v2",'inspectionresult.repairer_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairer_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修人员 ******************** pie_v1***/ init_echart("echart_inspectionresult_repairer_pie_v1",'inspectionresult.repairer_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairer_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修人员 ******************** pie***/ init_echart("echart_inspectionresult_repairer_pie",'inspectionresult.repairer_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_repairer_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修人员 ******************** line***/ init_echart("echart_inspectionresult_repairer_line",'inspectionresult.repairer_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_repairer_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修人员 ******************** bar***/ init_echart("echart_inspectionresult_repairer_bar",'inspectionresult.repairer_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_repairer_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修人员 ******************** bar_v1***/ init_echart("echart_inspectionresult_repairer_bar_v1",'inspectionresult.repairer_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修时间 ******************** pie_v2***/ init_echart("echart_inspectionresult_repairtime_pie_v2",'inspectionresult.repairtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修时间 ******************** pie_v1***/ init_echart("echart_inspectionresult_repairtime_pie_v1",'inspectionresult.repairtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_inspectionresult_repairtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修时间 ******************** pie***/ init_echart("echart_inspectionresult_repairtime_pie",'inspectionresult.repairtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_inspectionresult_repairtime_line" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修时间 ******************** line***/ init_echart("echart_inspectionresult_repairtime_line",'inspectionresult.repairtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_repairtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修时间 ******************** bar***/ init_echart("echart_inspectionresult_repairtime_bar",'inspectionresult.repairtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_inspectionresult_repairtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 巡检结果表 维修时间 ******************** bar_v1***/ init_echart("echart_inspectionresult_repairtime_bar_v1",'inspectionresult.repairtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

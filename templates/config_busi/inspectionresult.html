@@ -1,0 +1,909 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+巡检结果表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>巡检结果表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpinspectionresult" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row">
+<form action="" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/inspectionresult">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_inspectionid.mcauthview %}
+<td>
+巡检编号
+</td>
+{% endif %}
+
+{% if mcauthfield_inspectiontime.mcauthview %}
+<td>
+巡检时间
+</td>
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview %}
+<td>
+机器人编号
+</td>
+{% endif %}
+
+{% if mcauthfield_safetystatus.mcauthview %}
+<td>
+安全状态
+</td>
+{% endif %}
+
+{% if mcauthfield_faultdescription.mcauthview %}
+<td>
+故障描述
+</td>
+{% endif %}
+
+{% if mcauthfield_repairstatus.mcauthview %}
+<td>
+维修状态
+</td>
+{% endif %}
+
+{% if mcauthfield_inspectkwkwor.mcauthview %}
+<td>
+巡检员
+</td>
+{% endif %}
+
+{% if mcauthfield_repairer.mcauthview %}
+<td>
+维修人员
+</td>
+{% endif %}
+
+{% if mcauthfield_repairtime.mcauthview %}
+<td>
+维修时间
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_inspectionid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.inspectionid}}">
+{{record.inspectionid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_inspectiontime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.inspectiontime}}">
+{{record.inspectiontime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_robotid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.robotid}}">
+{{record.robotid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_safetystatus.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.safetystatus}}">
+{{record.safetystatus}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_faultdescription.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.faultdescription %}
+{{record.faultdescription.name}}
+<p title="{{record.faultdescription}}">
+{{record.faultdescription|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_repairstatus.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.repairstatus}}">
+{{record.repairstatus}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_inspectkwkwor.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.inspectkwkwor}}">
+{{record.inspectkwkwor}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_repairer.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.repairer}}">
+{{record.repairer}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_repairtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.repairtime}}">
+{{record.repairtime}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_inspectionid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="inspectionid" class="form-label form-group">巡检编号</label>
+
+<input type="text" class="form-control form-control-lg" name="inspectionid" id="inspectionid"{% if not mcauthfield_inspectionid.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_inspectiontime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="inspectiontime" class="form-label form-group">巡检时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_robotid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="robotid" class="form-label form-group">机器人编号</label>
+
+<input type="text" class="form-control form-control-lg" name="robotid" id="robotid"{% if not mcauthfield_robotid.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_safetystatus.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="safetystatus" class="form-label form-group">安全状态</label>
+
+<input type="text" class="form-control form-control-lg" name="safetystatus" id="safetystatus"{% if not mcauthfield_safetystatus.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_faultdescription.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="faultdescription" class="form-label form-group">故障描述</label>
+
+<textarea class="form-control form-control-lg" name="faultdescription" id="faultdescription" {% if not mcauthfield_faultdescription.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairstatus.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairstatus" class="form-label form-group">维修状态</label>
+
+<input type="text" class="form-control form-control-lg" name="repairstatus" id="repairstatus"{% if not mcauthfield_repairstatus.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_inspectkwkwor.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="inspectkwkwor" class="form-label form-group">巡检员</label>
+
+<input type="text" class="form-control form-control-lg" name="inspectkwkwor" id="inspectkwkwor"{% if not mcauthfield_inspectkwkwor.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairer.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairer" class="form-label form-group">维修人员</label>
+
+<input type="text" class="form-control form-control-lg" name="repairer" id="repairer"{% if not mcauthfield_repairer.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairtime" class="form-label form-group">维修时间</label>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_inspectionid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="inspectionid_upd"
+class="form-label form-group">
+巡检编号(inspectionid)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="inspectionid"
+id="inspectionid_upd"
+placeholder="巡检编号"
+{% if not mcauthfield_inspectionid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_inspectionid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_inspectiontime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="inspectiontime_upd"
+class="form-label form-group">
+巡检时间(inspectiontime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_robotid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="robotid_upd"
+class="form-label form-group">
+机器人编号(robotid)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="robotid"
+id="robotid_upd"
+placeholder="机器人编号"
+{% if not mcauthfield_robotid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_robotid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_safetystatus.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="safetystatus_upd"
+class="form-label form-group">
+安全状态(safetystatus)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="safetystatus"
+id="safetystatus_upd"
+placeholder="安全状态"
+{% if not mcauthfield_safetystatus.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_safetystatus.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_faultdescription.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="faultdescription_upd"
+class="form-label form-group">
+故障描述(faultdescription)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="faultdescription"
+id="faultdescription_upd"
+placeholder="故障描述"
+{% if not mcauthfield_faultdescription.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_faultdescription.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_repairstatus.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="repairstatus_upd"
+class="form-label form-group">
+维修状态(repairstatus)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="repairstatus"
+id="repairstatus_upd"
+placeholder="维修状态"
+{% if not mcauthfield_repairstatus.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_repairstatus.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_inspectkwkwor.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="inspectkwkwor_upd"
+class="form-label form-group">
+巡检员(inspectkwkwor)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="inspectkwkwor"
+id="inspectkwkwor_upd"
+placeholder="巡检员"
+{% if not mcauthfield_inspectkwkwor.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_inspectkwkwor.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_repairer.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="repairer_upd"
+class="form-label form-group">
+维修人员(repairer)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="repairer"
+id="repairer_upd"
+placeholder="维修人员"
+{% if not mcauthfield_repairer.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_repairer.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_repairtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="repairtime_upd"
+class="form-label form-group">
+维修时间(repairtime)
+</label>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_inspectionid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">巡检编号</p>
+
+<p id="inspectionid_view">
+{{record.inspectionid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_inspectiontime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">巡检时间</p>
+
+<p id="inspectiontime_view">
+{{record.inspectiontime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">机器人编号</p>
+
+<p id="robotid_view">
+{{record.robotid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_safetystatus.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">安全状态</p>
+
+<p id="safetystatus_view">
+{{record.safetystatus|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_faultdescription.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">故障描述</p>
+
+<p id="faultdescription_view">
+{{record.faultdescription|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_repairstatus.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">维修状态</p>
+
+<p id="repairstatus_view">
+{{record.repairstatus|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_inspectkwkwor.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">巡检员</p>
+
+<p id="inspectkwkwor_view">
+{{record.inspectkwkwor|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_repairer.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">维修人员</p>
+
+<p id="repairer_view">
+{{record.repairer|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_repairtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">维修时间</p>
+
+<p id="repairtime_view">
+{{record.repairtime|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/inspectionresult";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/inspectionresult',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_inspectionid.mcauthview %}
+$("#inspectionid_upd").val(resp.ins.inspectionid);
+{% endif %}
+
+{% if mcauthfield_inspectiontime.mcauthview %}
+$("#inspectiontime_upd").val(resp.ins.inspectiontime);
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview %}
+$("#robotid_upd").val(resp.ins.robotid);
+{% endif %}
+
+{% if mcauthfield_safetystatus.mcauthview %}
+$("#safetystatus_upd").val(resp.ins.safetystatus);
+{% endif %}
+
+{% if mcauthfield_faultdescription.mcauthview %}
+$("#faultdescription_upd").val(resp.ins.faultdescription);
+{% endif %}
+
+{% if mcauthfield_repairstatus.mcauthview %}
+$("#repairstatus_upd").val(resp.ins.repairstatus);
+{% endif %}
+
+{% if mcauthfield_inspectkwkwor.mcauthview %}
+$("#inspectkwkwor_upd").val(resp.ins.inspectkwkwor);
+{% endif %}
+
+{% if mcauthfield_repairer.mcauthview %}
+$("#repairer_upd").val(resp.ins.repairer);
+{% endif %}
+
+{% if mcauthfield_repairtime.mcauthview %}
+$("#repairtime_upd").val(resp.ins.repairtime);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_inspectionid.mcauthchange %}
+inspectionid:$("#inspectionid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_inspectiontime.mcauthchange %}
+inspectiontime:$("#inspectiontime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthchange %}
+robotid:$("#robotid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_safetystatus.mcauthchange %}
+safetystatus:$("#safetystatus_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_faultdescription.mcauthchange %}
+faultdescription:$("#faultdescription_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_repairstatus.mcauthchange %}
+repairstatus:$("#repairstatus_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_inspectkwkwor.mcauthchange %}
+inspectkwkwor:$("#inspectkwkwor_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_repairer.mcauthchange %}
+repairer:$("#repairer_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_repairtime.mcauthchange %}
+repairtime:$("#repairtime_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/inspectionresult',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/inspectionresult',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_inspectionid.mcauthview %}
+document.getElementById("inspectionid_view").innerHTML=resp.ins.inspectionid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_inspectiontime.mcauthview %}
+document.getElementById("inspectiontime_view").innerHTML=resp.ins.inspectiontime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_robotid.mcauthview %}
+document.getElementById("robotid_view").innerHTML=resp.ins.robotid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_safetystatus.mcauthview %}
+document.getElementById("safetystatus_view").innerHTML=resp.ins.safetystatus;
+{% endif %}
+
+
+
+
+{% if mcauthfield_faultdescription.mcauthview %}
+document.getElementById("faultdescription_view").innerHTML=resp.ins.faultdescription;
+{% endif %}
+
+
+
+
+{% if mcauthfield_repairstatus.mcauthview %}
+document.getElementById("repairstatus_view").innerHTML=resp.ins.repairstatus;
+{% endif %}
+
+
+
+
+{% if mcauthfield_inspectkwkwor.mcauthview %}
+document.getElementById("inspectkwkwor_view").innerHTML=resp.ins.inspectkwkwor;
+{% endif %}
+
+
+
+
+{% if mcauthfield_repairer.mcauthview %}
+document.getElementById("repairer_view").innerHTML=resp.ins.repairer;
+{% endif %}
+
+
+
+
+{% if mcauthfield_repairtime.mcauthview %}
+document.getElementById("repairtime_view").innerHTML=resp.ins.repairtime;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/inspectionresult',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

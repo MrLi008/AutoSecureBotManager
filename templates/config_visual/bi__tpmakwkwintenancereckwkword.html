@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 维修记录表(makwkwintenancereckwkword)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修日期 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancedate_pie_v2",'makwkwintenancereckwkword.makwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修日期 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancedate_pie_v1",'makwkwintenancereckwkword.makwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修日期 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancedate_pie",'makwkwintenancereckwkword.makwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修日期 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancedate_line",'makwkwintenancereckwkword.makwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修日期 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancedate_bar",'makwkwintenancereckwkword.makwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修日期 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancedate_bar_v1",'makwkwintenancereckwkword.makwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancetype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修类型 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancetype_pie_v2",'makwkwintenancereckwkword.makwkwintenancetype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancetype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修类型 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancetype_pie_v1",'makwkwintenancereckwkword.makwkwintenancetype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancetype_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修类型 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancetype_pie",'makwkwintenancereckwkword.makwkwintenancetype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancetype_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修类型 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancetype_line",'makwkwintenancereckwkword.makwkwintenancetype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancetype_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修类型 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancetype_bar",'makwkwintenancereckwkword.makwkwintenancetype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_makwkwintenancetype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修类型 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_makwkwintenancetype_bar_v1",'makwkwintenancereckwkword.makwkwintenancetype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_problemdescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 问题描述 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_problemdescription_pie_v2",'makwkwintenancereckwkword.problemdescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_problemdescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 问题描述 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_problemdescription_pie_v1",'makwkwintenancereckwkword.problemdescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_problemdescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 问题描述 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_problemdescription_pie",'makwkwintenancereckwkword.problemdescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_problemdescription_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 问题描述 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_problemdescription_line",'makwkwintenancereckwkword.problemdescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_problemdescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 问题描述 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_problemdescription_bar",'makwkwintenancereckwkword.problemdescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_problemdescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 问题描述 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_problemdescription_bar_v1",'makwkwintenancereckwkword.problemdescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairstatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修状态 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_repairstatus_pie_v2",'makwkwintenancereckwkword.repairstatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairstatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修状态 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_repairstatus_pie_v1",'makwkwintenancereckwkword.repairstatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairstatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修状态 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_repairstatus_pie",'makwkwintenancereckwkword.repairstatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairstatus_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修状态 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_repairstatus_line",'makwkwintenancereckwkword.repairstatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairstatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修状态 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_repairstatus_bar",'makwkwintenancereckwkword.repairstatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairstatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修状态 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_repairstatus_bar_v1",'makwkwintenancereckwkword.repairstatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repaircost_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修费用 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_repaircost_pie_v2",'makwkwintenancereckwkword.repaircost_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repaircost_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修费用 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_repaircost_pie_v1",'makwkwintenancereckwkword.repaircost_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repaircost_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修费用 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_repaircost_pie",'makwkwintenancereckwkword.repaircost_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repaircost_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修费用 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_repaircost_line",'makwkwintenancereckwkword.repaircost_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repaircost_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修费用 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_repaircost_bar",'makwkwintenancereckwkword.repaircost_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repaircost_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修费用 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_repaircost_bar_v1",'makwkwintenancereckwkword.repaircost_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairduration_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修时长 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_repairduration_pie_v2",'makwkwintenancereckwkword.repairduration_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairduration_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修时长 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_repairduration_pie_v1",'makwkwintenancereckwkword.repairduration_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairduration_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修时长 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_repairduration_pie",'makwkwintenancereckwkword.repairduration_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairduration_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修时长 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_repairduration_line",'makwkwintenancereckwkword.repairduration_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairduration_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修时长 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_repairduration_bar",'makwkwintenancereckwkword.repairduration_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_repairduration_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 维修时长 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_repairduration_bar_v1",'makwkwintenancereckwkword.repairduration_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_relatedparts_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 相关部件 ******************** pie_v2***/ init_echart("echart_makwkwintenancereckwkword_relatedparts_pie_v2",'makwkwintenancereckwkword.relatedparts_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_relatedparts_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 相关部件 ******************** pie_v1***/ init_echart("echart_makwkwintenancereckwkword_relatedparts_pie_v1",'makwkwintenancereckwkword.relatedparts_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_relatedparts_pie" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 相关部件 ******************** pie***/ init_echart("echart_makwkwintenancereckwkword_relatedparts_pie",'makwkwintenancereckwkword.relatedparts_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_relatedparts_line" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 相关部件 ******************** line***/ init_echart("echart_makwkwintenancereckwkword_relatedparts_line",'makwkwintenancereckwkword.relatedparts_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_relatedparts_bar" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 相关部件 ******************** bar***/ init_echart("echart_makwkwintenancereckwkword_relatedparts_bar",'makwkwintenancereckwkword.relatedparts_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_makwkwintenancereckwkword_relatedparts_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 维修记录表 相关部件 ******************** bar_v1***/ init_echart("echart_makwkwintenancereckwkword_relatedparts_bar_v1",'makwkwintenancereckwkword.relatedparts_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人操作日志表(robotoperationlog)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作时间 ******************** pie_v2***/ init_echart("echart_robotoperationlog_operationtime_pie_v2",'robotoperationlog.operationtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作时间 ******************** pie_v1***/ init_echart("echart_robotoperationlog_operationtime_pie_v1",'robotoperationlog.operationtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作时间 ******************** pie***/ init_echart("echart_robotoperationlog_operationtime_pie",'robotoperationlog.operationtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作时间 ******************** line***/ init_echart("echart_robotoperationlog_operationtime_line",'robotoperationlog.operationtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作时间 ******************** bar***/ init_echart("echart_robotoperationlog_operationtime_bar",'robotoperationlog.operationtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作时间 ******************** bar_v1***/ init_echart("echart_robotoperationlog_operationtime_bar_v1",'robotoperationlog.operationtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作类型 ******************** pie_v2***/ init_echart("echart_robotoperationlog_operationtype_pie_v2",'robotoperationlog.operationtype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作类型 ******************** pie_v1***/ init_echart("echart_robotoperationlog_operationtype_pie_v1",'robotoperationlog.operationtype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtype_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作类型 ******************** pie***/ init_echart("echart_robotoperationlog_operationtype_pie",'robotoperationlog.operationtype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtype_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作类型 ******************** line***/ init_echart("echart_robotoperationlog_operationtype_line",'robotoperationlog.operationtype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtype_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作类型 ******************** bar***/ init_echart("echart_robotoperationlog_operationtype_bar",'robotoperationlog.operationtype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_operationtype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作类型 ******************** bar_v1***/ init_echart("echart_robotoperationlog_operationtype_bar_v1",'robotoperationlog.operationtype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationresult_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作结果 ******************** pie_v2***/ init_echart("echart_robotoperationlog_operationresult_pie_v2",'robotoperationlog.operationresult_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationresult_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作结果 ******************** pie_v1***/ init_echart("echart_robotoperationlog_operationresult_pie_v1",'robotoperationlog.operationresult_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_operationresult_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作结果 ******************** pie***/ init_echart("echart_robotoperationlog_operationresult_pie",'robotoperationlog.operationresult_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotoperationlog_operationresult_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作结果 ******************** line***/ init_echart("echart_robotoperationlog_operationresult_line",'robotoperationlog.operationresult_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_operationresult_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作结果 ******************** bar***/ init_echart("echart_robotoperationlog_operationresult_bar",'robotoperationlog.operationresult_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_operationresult_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 操作结果 ******************** bar_v1***/ init_echart("echart_robotoperationlog_operationresult_bar_v1",'robotoperationlog.operationresult_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkworcode_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误代码 ******************** pie_v2***/ init_echart("echart_robotoperationlog_errkwkworcode_pie_v2",'robotoperationlog.errkwkworcode_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkworcode_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误代码 ******************** pie_v1***/ init_echart("echart_robotoperationlog_errkwkworcode_pie_v1",'robotoperationlog.errkwkworcode_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkworcode_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误代码 ******************** pie***/ init_echart("echart_robotoperationlog_errkwkworcode_pie",'robotoperationlog.errkwkworcode_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkworcode_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误代码 ******************** line***/ init_echart("echart_robotoperationlog_errkwkworcode_line",'robotoperationlog.errkwkworcode_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkworcode_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误代码 ******************** bar***/ init_echart("echart_robotoperationlog_errkwkworcode_bar",'robotoperationlog.errkwkworcode_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkworcode_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误代码 ******************** bar_v1***/ init_echart("echart_robotoperationlog_errkwkworcode_bar_v1",'robotoperationlog.errkwkworcode_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkwormessage_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误信息 ******************** pie_v2***/ init_echart("echart_robotoperationlog_errkwkwormessage_pie_v2",'robotoperationlog.errkwkwormessage_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkwormessage_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误信息 ******************** pie_v1***/ init_echart("echart_robotoperationlog_errkwkwormessage_pie_v1",'robotoperationlog.errkwkwormessage_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkwormessage_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误信息 ******************** pie***/ init_echart("echart_robotoperationlog_errkwkwormessage_pie",'robotoperationlog.errkwkwormessage_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkwormessage_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误信息 ******************** line***/ init_echart("echart_robotoperationlog_errkwkwormessage_line",'robotoperationlog.errkwkwormessage_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkwormessage_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误信息 ******************** bar***/ init_echart("echart_robotoperationlog_errkwkwormessage_bar",'robotoperationlog.errkwkwormessage_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotoperationlog_errkwkwormessage_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人操作日志表 错误信息 ******************** bar_v1***/ init_echart("echart_robotoperationlog_errkwkwormessage_bar_v1",'robotoperationlog.errkwkwormessage_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

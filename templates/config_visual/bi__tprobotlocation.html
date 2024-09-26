@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人位置表(robotlocation)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_locationcode_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 位置编码机器人当前所在位置的唯一编码 ******************** pie_v2***/ init_echart("echart_robotlocation_locationcode_pie_v2",'robotlocation.locationcode_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_locationcode_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 位置编码机器人当前所在位置的唯一编码 ******************** pie_v1***/ init_echart("echart_robotlocation_locationcode_pie_v1",'robotlocation.locationcode_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_locationcode_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 位置编码机器人当前所在位置的唯一编码 ******************** pie***/ init_echart("echart_robotlocation_locationcode_pie",'robotlocation.locationcode_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_locationcode_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 位置编码机器人当前所在位置的唯一编码 ******************** line***/ init_echart("echart_robotlocation_locationcode_line",'robotlocation.locationcode_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_locationcode_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 位置编码机器人当前所在位置的唯一编码 ******************** bar***/ init_echart("echart_robotlocation_locationcode_bar",'robotlocation.locationcode_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_locationcode_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 位置编码机器人当前所在位置的唯一编码 ******************** bar_v1***/ init_echart("echart_robotlocation_locationcode_bar_v1",'robotlocation.locationcode_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_areaname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 区域名称机器人所在区域的名称 ******************** pie_v2***/ init_echart("echart_robotlocation_areaname_pie_v2",'robotlocation.areaname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_areaname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 区域名称机器人所在区域的名称 ******************** pie_v1***/ init_echart("echart_robotlocation_areaname_pie_v1",'robotlocation.areaname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_areaname_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 区域名称机器人所在区域的名称 ******************** pie***/ init_echart("echart_robotlocation_areaname_pie",'robotlocation.areaname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_areaname_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 区域名称机器人所在区域的名称 ******************** line***/ init_echart("echart_robotlocation_areaname_line",'robotlocation.areaname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_areaname_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 区域名称机器人所在区域的名称 ******************** bar***/ init_echart("echart_robotlocation_areaname_bar",'robotlocation.areaname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_areaname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 区域名称机器人所在区域的名称 ******************** bar_v1***/ init_echart("echart_robotlocation_areaname_bar_v1",'robotlocation.areaname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_xcokwkwordkwkwinatex_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的X轴坐标 ******************** pie_v2***/ init_echart("echart_robotlocation_xcokwkwordkwkwinatex_pie_v2",'robotlocation.xcokwkwordkwkwinatex_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_xcokwkwordkwkwinatex_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的X轴坐标 ******************** pie_v1***/ init_echart("echart_robotlocation_xcokwkwordkwkwinatex_pie_v1",'robotlocation.xcokwkwordkwkwinatex_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_xcokwkwordkwkwinatex_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的X轴坐标 ******************** pie***/ init_echart("echart_robotlocation_xcokwkwordkwkwinatex_pie",'robotlocation.xcokwkwordkwkwinatex_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_xcokwkwordkwkwinatex_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的X轴坐标 ******************** line***/ init_echart("echart_robotlocation_xcokwkwordkwkwinatex_line",'robotlocation.xcokwkwordkwkwinatex_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_xcokwkwordkwkwinatex_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的X轴坐标 ******************** bar***/ init_echart("echart_robotlocation_xcokwkwordkwkwinatex_bar",'robotlocation.xcokwkwordkwkwinatex_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_xcokwkwordkwkwinatex_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的X轴坐标 ******************** bar_v1***/ init_echart("echart_robotlocation_xcokwkwordkwkwinatex_bar_v1",'robotlocation.xcokwkwordkwkwinatex_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_ycokwkwordkwkwinatey_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Y轴坐标 ******************** pie_v2***/ init_echart("echart_robotlocation_ycokwkwordkwkwinatey_pie_v2",'robotlocation.ycokwkwordkwkwinatey_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_ycokwkwordkwkwinatey_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Y轴坐标 ******************** pie_v1***/ init_echart("echart_robotlocation_ycokwkwordkwkwinatey_pie_v1",'robotlocation.ycokwkwordkwkwinatey_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_ycokwkwordkwkwinatey_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Y轴坐标 ******************** pie***/ init_echart("echart_robotlocation_ycokwkwordkwkwinatey_pie",'robotlocation.ycokwkwordkwkwinatey_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_ycokwkwordkwkwinatey_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Y轴坐标 ******************** line***/ init_echart("echart_robotlocation_ycokwkwordkwkwinatey_line",'robotlocation.ycokwkwordkwkwinatey_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_ycokwkwordkwkwinatey_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Y轴坐标 ******************** bar***/ init_echart("echart_robotlocation_ycokwkwordkwkwinatey_bar",'robotlocation.ycokwkwordkwkwinatey_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_ycokwkwordkwkwinatey_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Y轴坐标 ******************** bar_v1***/ init_echart("echart_robotlocation_ycokwkwordkwkwinatey_bar_v1",'robotlocation.ycokwkwordkwkwinatey_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_zcokwkwordkwkwinatez_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Z轴坐标如果适用 ******************** pie_v2***/ init_echart("echart_robotlocation_zcokwkwordkwkwinatez_pie_v2",'robotlocation.zcokwkwordkwkwinatez_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_zcokwkwordkwkwinatez_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Z轴坐标如果适用 ******************** pie_v1***/ init_echart("echart_robotlocation_zcokwkwordkwkwinatez_pie_v1",'robotlocation.zcokwkwordkwkwinatez_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_zcokwkwordkwkwinatez_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Z轴坐标如果适用 ******************** pie***/ init_echart("echart_robotlocation_zcokwkwordkwkwinatez_pie",'robotlocation.zcokwkwordkwkwinatez_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_zcokwkwordkwkwinatez_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Z轴坐标如果适用 ******************** line***/ init_echart("echart_robotlocation_zcokwkwordkwkwinatez_line",'robotlocation.zcokwkwordkwkwinatez_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_zcokwkwordkwkwinatez_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Z轴坐标如果适用 ******************** bar***/ init_echart("echart_robotlocation_zcokwkwordkwkwinatez_bar",'robotlocation.zcokwkwordkwkwinatez_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_zcokwkwordkwkwinatez_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 坐标机器人在该区域内的Z轴坐标如果适用 ******************** bar_v1***/ init_echart("echart_robotlocation_zcokwkwordkwkwinatez_bar_v1",'robotlocation.zcokwkwordkwkwinatez_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 状态机器人的当前状态如“运行中”、“空闲”、“故障”等 ******************** pie_v2***/ init_echart("echart_robotlocation_status_pie_v2",'robotlocation.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 状态机器人的当前状态如“运行中”、“空闲”、“故障”等 ******************** pie_v1***/ init_echart("echart_robotlocation_status_pie_v1",'robotlocation.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 状态机器人的当前状态如“运行中”、“空闲”、“故障”等 ******************** pie***/ init_echart("echart_robotlocation_status_pie",'robotlocation.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_status_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 状态机器人的当前状态如“运行中”、“空闲”、“故障”等 ******************** line***/ init_echart("echart_robotlocation_status_line",'robotlocation.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 状态机器人的当前状态如“运行中”、“空闲”、“故障”等 ******************** bar***/ init_echart("echart_robotlocation_status_bar",'robotlocation.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 状态机器人的当前状态如“运行中”、“空闲”、“故障”等 ******************** bar_v1***/ init_echart("echart_robotlocation_status_bar_v1",'robotlocation.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_lkwkwastupdatetime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 最后更新时间机器人位置信息最后一次更新的时间 ******************** pie_v2***/ init_echart("echart_robotlocation_lkwkwastupdatetime_pie_v2",'robotlocation.lkwkwastupdatetime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_lkwkwastupdatetime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 最后更新时间机器人位置信息最后一次更新的时间 ******************** pie_v1***/ init_echart("echart_robotlocation_lkwkwastupdatetime_pie_v1",'robotlocation.lkwkwastupdatetime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotlocation_lkwkwastupdatetime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 最后更新时间机器人位置信息最后一次更新的时间 ******************** pie***/ init_echart("echart_robotlocation_lkwkwastupdatetime_pie",'robotlocation.lkwkwastupdatetime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotlocation_lkwkwastupdatetime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 最后更新时间机器人位置信息最后一次更新的时间 ******************** line***/ init_echart("echart_robotlocation_lkwkwastupdatetime_line",'robotlocation.lkwkwastupdatetime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_lkwkwastupdatetime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 最后更新时间机器人位置信息最后一次更新的时间 ******************** bar***/ init_echart("echart_robotlocation_lkwkwastupdatetime_bar",'robotlocation.lkwkwastupdatetime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotlocation_lkwkwastupdatetime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人位置表 最后更新时间机器人位置信息最后一次更新的时间 ******************** bar_v1***/ init_echart("echart_robotlocation_lkwkwastupdatetime_bar_v1",'robotlocation.lkwkwastupdatetime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

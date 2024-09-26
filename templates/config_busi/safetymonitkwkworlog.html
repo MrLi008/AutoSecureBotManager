@@ -1,0 +1,867 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+安全监控日志表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>安全监控日志表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpsafetymonitkwkworlog" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row">
+<form action="" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/safetymonitkwkworlog">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_logid.mcauthview %}
+<td>
+日志ID
+</td>
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthview %}
+<td>
+设备ID
+</td>
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview %}
+<td>
+机器人ID
+</td>
+{% endif %}
+
+{% if mcauthfield_eventtype.mcauthview %}
+<td>
+事件类型
+</td>
+{% endif %}
+
+{% if mcauthfield_eventtime.mcauthview %}
+<td>
+事件发生时间
+</td>
+{% endif %}
+
+{% if mcauthfield_eventdescription.mcauthview %}
+<td>
+事件描述
+</td>
+{% endif %}
+
+{% if mcauthfield_severity.mcauthview %}
+<td>
+严重程度
+</td>
+{% endif %}
+
+{% if mcauthfield_actiontaken.mcauthview %}
+<td>
+采取的措施
+</td>
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthview %}
+<td>
+操作人员ID
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_logid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.logid}}">
+{{record.logid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_deviceid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.deviceid}}">
+{{record.deviceid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_robotid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.robotid}}">
+{{record.robotid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_eventtype.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.eventtype}}">
+{{record.eventtype}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_eventtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.eventtime}}">
+{{record.eventtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_eventdescription.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.eventdescription %}
+{{record.eventdescription.name}}
+<p title="{{record.eventdescription}}">
+{{record.eventdescription|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_severity.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.severity}}">
+{{record.severity}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_actiontaken.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.actiontaken}}">
+{{record.actiontaken}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_operatkwkworid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.operatkwkworid}}">
+{{record.operatkwkworid}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_logid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="logid" class="form-label form-group">日志ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_deviceid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="deviceid" class="form-label form-group">设备ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_robotid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="robotid" class="form-label form-group">机器人ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_eventtype.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="eventtype" class="form-label form-group">事件类型</label>
+
+<input type="text" class="form-control form-control-lg" name="eventtype" id="eventtype"{% if not mcauthfield_eventtype.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_eventtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="eventtime" class="form-label form-group">事件发生时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_eventdescription.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="eventdescription" class="form-label form-group">事件描述</label>
+
+<textarea class="form-control form-control-lg" name="eventdescription" id="eventdescription" {% if not mcauthfield_eventdescription.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_severity.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="severity" class="form-label form-group">严重程度</label>
+
+<input type="text" class="form-control form-control-lg" name="severity" id="severity"{% if not mcauthfield_severity.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_actiontaken.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="actiontaken" class="form-label form-group">采取的措施</label>
+
+<input type="text" class="form-control form-control-lg" name="actiontaken" id="actiontaken"{% if not mcauthfield_actiontaken.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_operatkwkworid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="operatkwkworid" class="form-label form-group">操作人员ID</label>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_logid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="logid_upd"
+class="form-label form-group">
+日志ID(logid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_deviceid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="deviceid_upd"
+class="form-label form-group">
+设备ID(deviceid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_robotid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="robotid_upd"
+class="form-label form-group">
+机器人ID(robotid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_eventtype.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="eventtype_upd"
+class="form-label form-group">
+事件类型(eventtype)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="eventtype"
+id="eventtype_upd"
+placeholder="事件类型"
+{% if not mcauthfield_eventtype.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_eventtype.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_eventtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="eventtime_upd"
+class="form-label form-group">
+事件发生时间(eventtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_eventdescription.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="eventdescription_upd"
+class="form-label form-group">
+事件描述(eventdescription)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="eventdescription"
+id="eventdescription_upd"
+placeholder="事件描述"
+{% if not mcauthfield_eventdescription.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_eventdescription.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_severity.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="severity_upd"
+class="form-label form-group">
+严重程度(severity)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="severity"
+id="severity_upd"
+placeholder="严重程度"
+{% if not mcauthfield_severity.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_severity.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_actiontaken.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="actiontaken_upd"
+class="form-label form-group">
+采取的措施(actiontaken)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="actiontaken"
+id="actiontaken_upd"
+placeholder="采取的措施"
+{% if not mcauthfield_actiontaken.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_actiontaken.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_operatkwkworid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="operatkwkworid_upd"
+class="form-label form-group">
+操作人员ID(operatkwkworid)
+</label>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_logid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">日志ID</p>
+
+<p id="logid_view">
+{{record.logid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">设备ID</p>
+
+<p id="deviceid_view">
+{{record.deviceid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">机器人ID</p>
+
+<p id="robotid_view">
+{{record.robotid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_eventtype.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">事件类型</p>
+
+<p id="eventtype_view">
+{{record.eventtype|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_eventtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">事件发生时间</p>
+
+<p id="eventtime_view">
+{{record.eventtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_eventdescription.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">事件描述</p>
+
+<p id="eventdescription_view">
+{{record.eventdescription|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_severity.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">严重程度</p>
+
+<p id="severity_view">
+{{record.severity|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_actiontaken.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">采取的措施</p>
+
+<p id="actiontaken_view">
+{{record.actiontaken|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">操作人员ID</p>
+
+<p id="operatkwkworid_view">
+{{record.operatkwkworid|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/safetymonitkwkworlog";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/safetymonitkwkworlog',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_logid.mcauthview %}
+$("#logid_upd").val(resp.ins.logid);
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthview %}
+$("#deviceid_upd").val(resp.ins.deviceid);
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview %}
+$("#robotid_upd").val(resp.ins.robotid);
+{% endif %}
+
+{% if mcauthfield_eventtype.mcauthview %}
+$("#eventtype_upd").val(resp.ins.eventtype);
+{% endif %}
+
+{% if mcauthfield_eventtime.mcauthview %}
+$("#eventtime_upd").val(resp.ins.eventtime);
+{% endif %}
+
+{% if mcauthfield_eventdescription.mcauthview %}
+$("#eventdescription_upd").val(resp.ins.eventdescription);
+{% endif %}
+
+{% if mcauthfield_severity.mcauthview %}
+$("#severity_upd").val(resp.ins.severity);
+{% endif %}
+
+{% if mcauthfield_actiontaken.mcauthview %}
+$("#actiontaken_upd").val(resp.ins.actiontaken);
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthview %}
+$("#operatkwkworid_upd").val(resp.ins.operatkwkworid);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_logid.mcauthchange %}
+logid:$("#logid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthchange %}
+deviceid:$("#deviceid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthchange %}
+robotid:$("#robotid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_eventtype.mcauthchange %}
+eventtype:$("#eventtype_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_eventtime.mcauthchange %}
+eventtime:$("#eventtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_eventdescription.mcauthchange %}
+eventdescription:$("#eventdescription_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_severity.mcauthchange %}
+severity:$("#severity_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_actiontaken.mcauthchange %}
+actiontaken:$("#actiontaken_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthchange %}
+operatkwkworid:$("#operatkwkworid_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/safetymonitkwkworlog',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/safetymonitkwkworlog',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_logid.mcauthview %}
+document.getElementById("logid_view").innerHTML=resp.ins.logid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_deviceid.mcauthview %}
+document.getElementById("deviceid_view").innerHTML=resp.ins.deviceid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_robotid.mcauthview %}
+document.getElementById("robotid_view").innerHTML=resp.ins.robotid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_eventtype.mcauthview %}
+document.getElementById("eventtype_view").innerHTML=resp.ins.eventtype;
+{% endif %}
+
+
+
+
+{% if mcauthfield_eventtime.mcauthview %}
+document.getElementById("eventtime_view").innerHTML=resp.ins.eventtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_eventdescription.mcauthview %}
+document.getElementById("eventdescription_view").innerHTML=resp.ins.eventdescription;
+{% endif %}
+
+
+
+
+{% if mcauthfield_severity.mcauthview %}
+document.getElementById("severity_view").innerHTML=resp.ins.severity;
+{% endif %}
+
+
+
+
+{% if mcauthfield_actiontaken.mcauthview %}
+document.getElementById("actiontaken_view").innerHTML=resp.ins.actiontaken;
+{% endif %}
+
+
+
+
+{% if mcauthfield_operatkwkworid.mcauthview %}
+document.getElementById("operatkwkworid_view").innerHTML=resp.ins.operatkwkworid;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/safetymonitkwkworlog',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

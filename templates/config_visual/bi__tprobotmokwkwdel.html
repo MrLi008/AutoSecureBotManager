@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人型号表(robotmokwkwdel)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_mokwkwdelname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 机器人型号名称 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_mokwkwdelname_pie_v2",'robotmokwkwdel.mokwkwdelname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_mokwkwdelname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 机器人型号名称 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_mokwkwdelname_pie_v1",'robotmokwkwdel.mokwkwdelname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_mokwkwdelname_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 机器人型号名称 ******************** pie***/ init_echart("echart_robotmokwkwdel_mokwkwdelname_pie",'robotmokwkwdel.mokwkwdelname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_mokwkwdelname_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 机器人型号名称 ******************** line***/ init_echart("echart_robotmokwkwdel_mokwkwdelname_line",'robotmokwkwdel.mokwkwdelname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_mokwkwdelname_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 机器人型号名称 ******************** bar***/ init_echart("echart_robotmokwkwdel_mokwkwdelname_bar",'robotmokwkwdel.mokwkwdelname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_mokwkwdelname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 机器人型号名称 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_mokwkwdelname_bar_v1",'robotmokwkwdel.mokwkwdelname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_manufacturer_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 制造商 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_manufacturer_pie_v2",'robotmokwkwdel.manufacturer_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_manufacturer_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 制造商 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_manufacturer_pie_v1",'robotmokwkwdel.manufacturer_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_manufacturer_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 制造商 ******************** pie***/ init_echart("echart_robotmokwkwdel_manufacturer_pie",'robotmokwkwdel.manufacturer_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_manufacturer_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 制造商 ******************** line***/ init_echart("echart_robotmokwkwdel_manufacturer_line",'robotmokwkwdel.manufacturer_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_manufacturer_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 制造商 ******************** bar***/ init_echart("echart_robotmokwkwdel_manufacturer_bar",'robotmokwkwdel.manufacturer_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_manufacturer_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 制造商 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_manufacturer_bar_v1",'robotmokwkwdel.manufacturer_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_productionyear_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 生产年份 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_productionyear_pie_v2",'robotmokwkwdel.productionyear_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_productionyear_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 生产年份 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_productionyear_pie_v1",'robotmokwkwdel.productionyear_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_productionyear_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 生产年份 ******************** pie***/ init_echart("echart_robotmokwkwdel_productionyear_pie",'robotmokwkwdel.productionyear_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_productionyear_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 生产年份 ******************** line***/ init_echart("echart_robotmokwkwdel_productionyear_line",'robotmokwkwdel.productionyear_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_productionyear_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 生产年份 ******************** bar***/ init_echart("echart_robotmokwkwdel_productionyear_bar",'robotmokwkwdel.productionyear_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_productionyear_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 生产年份 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_productionyear_bar_v1",'robotmokwkwdel.productionyear_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_maxpayload_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 最大负载能力 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_maxpayload_pie_v2",'robotmokwkwdel.maxpayload_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_maxpayload_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 最大负载能力 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_maxpayload_pie_v1",'robotmokwkwdel.maxpayload_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_maxpayload_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 最大负载能力 ******************** pie***/ init_echart("echart_robotmokwkwdel_maxpayload_pie",'robotmokwkwdel.maxpayload_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_maxpayload_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 最大负载能力 ******************** line***/ init_echart("echart_robotmokwkwdel_maxpayload_line",'robotmokwkwdel.maxpayload_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_maxpayload_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 最大负载能力 ******************** bar***/ init_echart("echart_robotmokwkwdel_maxpayload_bar",'robotmokwkwdel.maxpayload_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_maxpayload_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 最大负载能力 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_maxpayload_bar_v1",'robotmokwkwdel.maxpayload_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_operatkwkwingvoltage_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 工作电压 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_operatkwkwingvoltage_pie_v2",'robotmokwkwdel.operatkwkwingvoltage_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_operatkwkwingvoltage_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 工作电压 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_operatkwkwingvoltage_pie_v1",'robotmokwkwdel.operatkwkwingvoltage_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_operatkwkwingvoltage_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 工作电压 ******************** pie***/ init_echart("echart_robotmokwkwdel_operatkwkwingvoltage_pie",'robotmokwkwdel.operatkwkwingvoltage_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_operatkwkwingvoltage_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 工作电压 ******************** line***/ init_echart("echart_robotmokwkwdel_operatkwkwingvoltage_line",'robotmokwkwdel.operatkwkwingvoltage_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_operatkwkwingvoltage_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 工作电压 ******************** bar***/ init_echart("echart_robotmokwkwdel_operatkwkwingvoltage_bar",'robotmokwkwdel.operatkwkwingvoltage_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_operatkwkwingvoltage_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 工作电压 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_operatkwkwingvoltage_bar_v1",'robotmokwkwdel.operatkwkwingvoltage_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_connectivitytype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 连接类型 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_connectivitytype_pie_v2",'robotmokwkwdel.connectivitytype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_connectivitytype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 连接类型 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_connectivitytype_pie_v1",'robotmokwkwdel.connectivitytype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_connectivitytype_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 连接类型 ******************** pie***/ init_echart("echart_robotmokwkwdel_connectivitytype_pie",'robotmokwkwdel.connectivitytype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_connectivitytype_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 连接类型 ******************** line***/ init_echart("echart_robotmokwkwdel_connectivitytype_line",'robotmokwkwdel.connectivitytype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_connectivitytype_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 连接类型 ******************** bar***/ init_echart("echart_robotmokwkwdel_connectivitytype_bar",'robotmokwkwdel.connectivitytype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_connectivitytype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 连接类型 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_connectivitytype_bar_v1",'robotmokwkwdel.connectivitytype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_safetycertkwkwification_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 安全认证 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_safetycertkwkwification_pie_v2",'robotmokwkwdel.safetycertkwkwification_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_safetycertkwkwification_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 安全认证 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_safetycertkwkwification_pie_v1",'robotmokwkwdel.safetycertkwkwification_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_safetycertkwkwification_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 安全认证 ******************** pie***/ init_echart("echart_robotmokwkwdel_safetycertkwkwification_pie",'robotmokwkwdel.safetycertkwkwification_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_safetycertkwkwification_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 安全认证 ******************** line***/ init_echart("echart_robotmokwkwdel_safetycertkwkwification_line",'robotmokwkwdel.safetycertkwkwification_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_safetycertkwkwification_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 安全认证 ******************** bar***/ init_echart("echart_robotmokwkwdel_safetycertkwkwification_bar",'robotmokwkwdel.safetycertkwkwification_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_safetycertkwkwification_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 安全认证 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_safetycertkwkwification_bar_v1",'robotmokwkwdel.safetycertkwkwification_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_makwkwintenanceinterval_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 维护周期 ******************** pie_v2***/ init_echart("echart_robotmokwkwdel_makwkwintenanceinterval_pie_v2",'robotmokwkwdel.makwkwintenanceinterval_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_makwkwintenanceinterval_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 维护周期 ******************** pie_v1***/ init_echart("echart_robotmokwkwdel_makwkwintenanceinterval_pie_v1",'robotmokwkwdel.makwkwintenanceinterval_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmokwkwdel_makwkwintenanceinterval_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 维护周期 ******************** pie***/ init_echart("echart_robotmokwkwdel_makwkwintenanceinterval_pie",'robotmokwkwdel.makwkwintenanceinterval_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmokwkwdel_makwkwintenanceinterval_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 维护周期 ******************** line***/ init_echart("echart_robotmokwkwdel_makwkwintenanceinterval_line",'robotmokwkwdel.makwkwintenanceinterval_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_makwkwintenanceinterval_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 维护周期 ******************** bar***/ init_echart("echart_robotmokwkwdel_makwkwintenanceinterval_bar",'robotmokwkwdel.makwkwintenanceinterval_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmokwkwdel_makwkwintenanceinterval_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人型号表 维护周期 ******************** bar_v1***/ init_echart("echart_robotmokwkwdel_makwkwintenanceinterval_bar_v1",'robotmokwkwdel.makwkwintenanceinterval_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人权限分配表(robotpermkwkwissionassignment)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_assignmentdate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 分配日期 ******************** pie_v2***/ init_echart("echart_robotpermkwkwissionassignment_assignmentdate_pie_v2",'robotpermkwkwissionassignment.assignmentdate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_assignmentdate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 分配日期 ******************** pie_v1***/ init_echart("echart_robotpermkwkwissionassignment_assignmentdate_pie_v1",'robotpermkwkwissionassignment.assignmentdate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_assignmentdate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 分配日期 ******************** pie***/ init_echart("echart_robotpermkwkwissionassignment_assignmentdate_pie",'robotpermkwkwissionassignment.assignmentdate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_assignmentdate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 分配日期 ******************** line***/ init_echart("echart_robotpermkwkwissionassignment_assignmentdate_line",'robotpermkwkwissionassignment.assignmentdate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_assignmentdate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 分配日期 ******************** bar***/ init_echart("echart_robotpermkwkwissionassignment_assignmentdate_bar",'robotpermkwkwissionassignment.assignmentdate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_assignmentdate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 分配日期 ******************** bar_v1***/ init_echart("echart_robotpermkwkwissionassignment_assignmentdate_bar_v1",'robotpermkwkwissionassignment.assignmentdate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_expirydate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 过期日期 ******************** pie_v2***/ init_echart("echart_robotpermkwkwissionassignment_expirydate_pie_v2",'robotpermkwkwissionassignment.expirydate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_expirydate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 过期日期 ******************** pie_v1***/ init_echart("echart_robotpermkwkwissionassignment_expirydate_pie_v1",'robotpermkwkwissionassignment.expirydate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_expirydate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 过期日期 ******************** pie***/ init_echart("echart_robotpermkwkwissionassignment_expirydate_pie",'robotpermkwkwissionassignment.expirydate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_expirydate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 过期日期 ******************** line***/ init_echart("echart_robotpermkwkwissionassignment_expirydate_line",'robotpermkwkwissionassignment.expirydate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_expirydate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 过期日期 ******************** bar***/ init_echart("echart_robotpermkwkwissionassignment_expirydate_bar",'robotpermkwkwissionassignment.expirydate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_expirydate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 过期日期 ******************** bar_v1***/ init_echart("echart_robotpermkwkwissionassignment_expirydate_bar_v1",'robotpermkwkwissionassignment.expirydate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_createdby_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 创建者 ******************** pie_v2***/ init_echart("echart_robotpermkwkwissionassignment_createdby_pie_v2",'robotpermkwkwissionassignment.createdby_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_createdby_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 创建者 ******************** pie_v1***/ init_echart("echart_robotpermkwkwissionassignment_createdby_pie_v1",'robotpermkwkwissionassignment.createdby_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_createdby_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 创建者 ******************** pie***/ init_echart("echart_robotpermkwkwissionassignment_createdby_pie",'robotpermkwkwissionassignment.createdby_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_createdby_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 创建者 ******************** line***/ init_echart("echart_robotpermkwkwissionassignment_createdby_line",'robotpermkwkwissionassignment.createdby_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_createdby_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 创建者 ******************** bar***/ init_echart("echart_robotpermkwkwissionassignment_createdby_bar",'robotpermkwkwissionassignment.createdby_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_createdby_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 创建者 ******************** bar_v1***/ init_echart("echart_robotpermkwkwissionassignment_createdby_bar_v1",'robotpermkwkwissionassignment.createdby_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 最后修改者 ******************** pie_v2***/ init_echart("echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_pie_v2",'robotpermkwkwissionassignment.lkwkwastmodkwkwifiedby_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 最后修改者 ******************** pie_v1***/ init_echart("echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_pie_v1",'robotpermkwkwissionassignment.lkwkwastmodkwkwifiedby_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 最后修改者 ******************** pie***/ init_echart("echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_pie",'robotpermkwkwissionassignment.lkwkwastmodkwkwifiedby_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 最后修改者 ******************** line***/ init_echart("echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_line",'robotpermkwkwissionassignment.lkwkwastmodkwkwifiedby_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 最后修改者 ******************** bar***/ init_echart("echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_bar",'robotpermkwkwissionassignment.lkwkwastmodkwkwifiedby_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人权限分配表 最后修改者 ******************** bar_v1***/ init_echart("echart_robotpermkwkwissionassignment_lkwkwastmodkwkwifiedby_bar_v1",'robotpermkwkwissionassignment.lkwkwastmodkwkwifiedby_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

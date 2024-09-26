@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 权限管理表(permkwkwissionmanagement)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_permkwkwissionname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限名称 ******************** pie_v2***/ init_echart("echart_permkwkwissionmanagement_permkwkwissionname_pie_v2",'permkwkwissionmanagement.permkwkwissionname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_permkwkwissionname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限名称 ******************** pie_v1***/ init_echart("echart_permkwkwissionmanagement_permkwkwissionname_pie_v1",'permkwkwissionmanagement.permkwkwissionname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_permkwkwissionname_pie" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限名称 ******************** pie***/ init_echart("echart_permkwkwissionmanagement_permkwkwissionname_pie",'permkwkwissionmanagement.permkwkwissionname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_permkwkwissionname_line" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限名称 ******************** line***/ init_echart("echart_permkwkwissionmanagement_permkwkwissionname_line",'permkwkwissionmanagement.permkwkwissionname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_permkwkwissionname_bar" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限名称 ******************** bar***/ init_echart("echart_permkwkwissionmanagement_permkwkwissionname_bar",'permkwkwissionmanagement.permkwkwissionname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_permkwkwissionname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限名称 ******************** bar_v1***/ init_echart("echart_permkwkwissionmanagement_permkwkwissionname_bar_v1",'permkwkwissionmanagement.permkwkwissionname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限描述 ******************** pie_v2***/ init_echart("echart_permkwkwissionmanagement_description_pie_v2",'permkwkwissionmanagement.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限描述 ******************** pie_v1***/ init_echart("echart_permkwkwissionmanagement_description_pie_v1",'permkwkwissionmanagement.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限描述 ******************** pie***/ init_echart("echart_permkwkwissionmanagement_description_pie",'permkwkwissionmanagement.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_description_line" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限描述 ******************** line***/ init_echart("echart_permkwkwissionmanagement_description_line",'permkwkwissionmanagement.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限描述 ******************** bar***/ init_echart("echart_permkwkwissionmanagement_description_bar",'permkwkwissionmanagement.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 权限描述 ******************** bar_v1***/ init_echart("echart_permkwkwissionmanagement_description_bar_v1",'permkwkwissionmanagement.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_createdtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 创建时间 ******************** pie_v2***/ init_echart("echart_permkwkwissionmanagement_createdtime_pie_v2",'permkwkwissionmanagement.createdtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_createdtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 创建时间 ******************** pie_v1***/ init_echart("echart_permkwkwissionmanagement_createdtime_pie_v1",'permkwkwissionmanagement.createdtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_createdtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 创建时间 ******************** pie***/ init_echart("echart_permkwkwissionmanagement_createdtime_pie",'permkwkwissionmanagement.createdtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_createdtime_line" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 创建时间 ******************** line***/ init_echart("echart_permkwkwissionmanagement_createdtime_line",'permkwkwissionmanagement.createdtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_createdtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 创建时间 ******************** bar***/ init_echart("echart_permkwkwissionmanagement_createdtime_bar",'permkwkwissionmanagement.createdtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_createdtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 创建时间 ******************** bar_v1***/ init_echart("echart_permkwkwissionmanagement_createdtime_bar_v1",'permkwkwissionmanagement.createdtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_updatedtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 更新时间 ******************** pie_v2***/ init_echart("echart_permkwkwissionmanagement_updatedtime_pie_v2",'permkwkwissionmanagement.updatedtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_updatedtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 更新时间 ******************** pie_v1***/ init_echart("echart_permkwkwissionmanagement_updatedtime_pie_v1",'permkwkwissionmanagement.updatedtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_updatedtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 更新时间 ******************** pie***/ init_echart("echart_permkwkwissionmanagement_updatedtime_pie",'permkwkwissionmanagement.updatedtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_updatedtime_line" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 更新时间 ******************** line***/ init_echart("echart_permkwkwissionmanagement_updatedtime_line",'permkwkwissionmanagement.updatedtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_updatedtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 更新时间 ******************** bar***/ init_echart("echart_permkwkwissionmanagement_updatedtime_bar",'permkwkwissionmanagement.updatedtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_updatedtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 更新时间 ******************** bar_v1***/ init_echart("echart_permkwkwissionmanagement_updatedtime_bar_v1",'permkwkwissionmanagement.updatedtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 状态如启用禁用 ******************** pie_v2***/ init_echart("echart_permkwkwissionmanagement_status_pie_v2",'permkwkwissionmanagement.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 状态如启用禁用 ******************** pie_v1***/ init_echart("echart_permkwkwissionmanagement_status_pie_v1",'permkwkwissionmanagement.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 状态如启用禁用 ******************** pie***/ init_echart("echart_permkwkwissionmanagement_status_pie",'permkwkwissionmanagement.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_status_line" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 状态如启用禁用 ******************** line***/ init_echart("echart_permkwkwissionmanagement_status_line",'permkwkwissionmanagement.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 状态如启用禁用 ******************** bar***/ init_echart("echart_permkwkwissionmanagement_status_bar",'permkwkwissionmanagement.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 状态如启用禁用 ******************** bar_v1***/ init_echart("echart_permkwkwissionmanagement_status_bar_v1",'permkwkwissionmanagement.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_systemmodule_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 系统模块如生产监控、设备控制等 ******************** pie_v2***/ init_echart("echart_permkwkwissionmanagement_systemmodule_pie_v2",'permkwkwissionmanagement.systemmodule_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_systemmodule_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 系统模块如生产监控、设备控制等 ******************** pie_v1***/ init_echart("echart_permkwkwissionmanagement_systemmodule_pie_v1",'permkwkwissionmanagement.systemmodule_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_systemmodule_pie" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 系统模块如生产监控、设备控制等 ******************** pie***/ init_echart("echart_permkwkwissionmanagement_systemmodule_pie",'permkwkwissionmanagement.systemmodule_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_systemmodule_line" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 系统模块如生产监控、设备控制等 ******************** line***/ init_echart("echart_permkwkwissionmanagement_systemmodule_line",'permkwkwissionmanagement.systemmodule_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_systemmodule_bar" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 系统模块如生产监控、设备控制等 ******************** bar***/ init_echart("echart_permkwkwissionmanagement_systemmodule_bar",'permkwkwissionmanagement.systemmodule_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_permkwkwissionmanagement_systemmodule_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 权限管理表 系统模块如生产监控、设备控制等 ******************** bar_v1***/ init_echart("echart_permkwkwissionmanagement_systemmodule_bar_v1",'permkwkwissionmanagement.systemmodule_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

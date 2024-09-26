@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人状态表(robotstatus)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 状态 ******************** pie_v2***/ init_echart("echart_robotstatus_status_pie_v2",'robotstatus.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 状态 ******************** pie_v1***/ init_echart("echart_robotstatus_status_pie_v1",'robotstatus.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 状态 ******************** pie***/ init_echart("echart_robotstatus_status_pie",'robotstatus.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_status_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 状态 ******************** line***/ init_echart("echart_robotstatus_status_line",'robotstatus.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 状态 ******************** bar***/ init_echart("echart_robotstatus_status_bar",'robotstatus.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 状态 ******************** bar_v1***/ init_echart("echart_robotstatus_status_bar_v1",'robotstatus.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_timestamp_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 时间戳 ******************** pie_v2***/ init_echart("echart_robotstatus_timestamp_pie_v2",'robotstatus.timestamp_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_timestamp_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 时间戳 ******************** pie_v1***/ init_echart("echart_robotstatus_timestamp_pie_v1",'robotstatus.timestamp_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_timestamp_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 时间戳 ******************** pie***/ init_echart("echart_robotstatus_timestamp_pie",'robotstatus.timestamp_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_timestamp_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 时间戳 ******************** line***/ init_echart("echart_robotstatus_timestamp_line",'robotstatus.timestamp_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_timestamp_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 时间戳 ******************** bar***/ init_echart("echart_robotstatus_timestamp_bar",'robotstatus.timestamp_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_timestamp_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 时间戳 ******************** bar_v1***/ init_echart("echart_robotstatus_timestamp_bar_v1",'robotstatus.timestamp_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_location_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 位置 ******************** pie_v2***/ init_echart("echart_robotstatus_location_pie_v2",'robotstatus.location_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_location_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 位置 ******************** pie_v1***/ init_echart("echart_robotstatus_location_pie_v1",'robotstatus.location_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_location_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 位置 ******************** pie***/ init_echart("echart_robotstatus_location_pie",'robotstatus.location_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_location_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 位置 ******************** line***/ init_echart("echart_robotstatus_location_line",'robotstatus.location_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_location_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 位置 ******************** bar***/ init_echart("echart_robotstatus_location_bar",'robotstatus.location_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_location_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 位置 ******************** bar_v1***/ init_echart("echart_robotstatus_location_bar_v1",'robotstatus.location_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_faultcode_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 故障代码 ******************** pie_v2***/ init_echart("echart_robotstatus_faultcode_pie_v2",'robotstatus.faultcode_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_faultcode_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 故障代码 ******************** pie_v1***/ init_echart("echart_robotstatus_faultcode_pie_v1",'robotstatus.faultcode_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_faultcode_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 故障代码 ******************** pie***/ init_echart("echart_robotstatus_faultcode_pie",'robotstatus.faultcode_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_faultcode_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 故障代码 ******************** line***/ init_echart("echart_robotstatus_faultcode_line",'robotstatus.faultcode_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_faultcode_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 故障代码 ******************** bar***/ init_echart("echart_robotstatus_faultcode_bar",'robotstatus.faultcode_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_faultcode_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 故障代码 ******************** bar_v1***/ init_echart("echart_robotstatus_faultcode_bar_v1",'robotstatus.faultcode_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_makwkwintenanceflag_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 维护标志 ******************** pie_v2***/ init_echart("echart_robotstatus_makwkwintenanceflag_pie_v2",'robotstatus.makwkwintenanceflag_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_makwkwintenanceflag_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 维护标志 ******************** pie_v1***/ init_echart("echart_robotstatus_makwkwintenanceflag_pie_v1",'robotstatus.makwkwintenanceflag_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_makwkwintenanceflag_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 维护标志 ******************** pie***/ init_echart("echart_robotstatus_makwkwintenanceflag_pie",'robotstatus.makwkwintenanceflag_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_makwkwintenanceflag_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 维护标志 ******************** line***/ init_echart("echart_robotstatus_makwkwintenanceflag_line",'robotstatus.makwkwintenanceflag_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_makwkwintenanceflag_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 维护标志 ******************** bar***/ init_echart("echart_robotstatus_makwkwintenanceflag_bar",'robotstatus.makwkwintenanceflag_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_makwkwintenanceflag_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 维护标志 ******************** bar_v1***/ init_echart("echart_robotstatus_makwkwintenanceflag_bar_v1",'robotstatus.makwkwintenanceflag_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_powerlevel_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 电量水平 ******************** pie_v2***/ init_echart("echart_robotstatus_powerlevel_pie_v2",'robotstatus.powerlevel_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_powerlevel_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 电量水平 ******************** pie_v1***/ init_echart("echart_robotstatus_powerlevel_pie_v1",'robotstatus.powerlevel_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_powerlevel_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 电量水平 ******************** pie***/ init_echart("echart_robotstatus_powerlevel_pie",'robotstatus.powerlevel_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_powerlevel_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 电量水平 ******************** line***/ init_echart("echart_robotstatus_powerlevel_line",'robotstatus.powerlevel_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_powerlevel_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 电量水平 ******************** bar***/ init_echart("echart_robotstatus_powerlevel_bar",'robotstatus.powerlevel_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_powerlevel_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 电量水平 ******************** bar_v1***/ init_echart("echart_robotstatus_powerlevel_bar_v1",'robotstatus.powerlevel_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_lkwkwastmakwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 上次维护日期 ******************** pie_v2***/ init_echart("echart_robotstatus_lkwkwastmakwkwintenancedate_pie_v2",'robotstatus.lkwkwastmakwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_lkwkwastmakwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 上次维护日期 ******************** pie_v1***/ init_echart("echart_robotstatus_lkwkwastmakwkwintenancedate_pie_v1",'robotstatus.lkwkwastmakwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotstatus_lkwkwastmakwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 上次维护日期 ******************** pie***/ init_echart("echart_robotstatus_lkwkwastmakwkwintenancedate_pie",'robotstatus.lkwkwastmakwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotstatus_lkwkwastmakwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 上次维护日期 ******************** line***/ init_echart("echart_robotstatus_lkwkwastmakwkwintenancedate_line",'robotstatus.lkwkwastmakwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_lkwkwastmakwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 上次维护日期 ******************** bar***/ init_echart("echart_robotstatus_lkwkwastmakwkwintenancedate_bar",'robotstatus.lkwkwastmakwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotstatus_lkwkwastmakwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人状态表 上次维护日期 ******************** bar_v1***/ init_echart("echart_robotstatus_lkwkwastmakwkwintenancedate_bar_v1",'robotstatus.lkwkwastmakwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

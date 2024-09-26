@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人巡检计划表(robotinspectionplan)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_starttime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 开始时间 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_starttime_pie_v2",'robotinspectionplan.starttime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_starttime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 开始时间 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_starttime_pie_v1",'robotinspectionplan.starttime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_starttime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 开始时间 ******************** pie***/ init_echart("echart_robotinspectionplan_starttime_pie",'robotinspectionplan.starttime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_starttime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 开始时间 ******************** line***/ init_echart("echart_robotinspectionplan_starttime_line",'robotinspectionplan.starttime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_starttime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 开始时间 ******************** bar***/ init_echart("echart_robotinspectionplan_starttime_bar",'robotinspectionplan.starttime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_starttime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 开始时间 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_starttime_bar_v1",'robotinspectionplan.starttime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_endtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 结束时间 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_endtime_pie_v2",'robotinspectionplan.endtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_endtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 结束时间 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_endtime_pie_v1",'robotinspectionplan.endtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_endtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 结束时间 ******************** pie***/ init_echart("echart_robotinspectionplan_endtime_pie",'robotinspectionplan.endtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_endtime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 结束时间 ******************** line***/ init_echart("echart_robotinspectionplan_endtime_line",'robotinspectionplan.endtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_endtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 结束时间 ******************** bar***/ init_echart("echart_robotinspectionplan_endtime_bar",'robotinspectionplan.endtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_endtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 结束时间 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_endtime_bar_v1",'robotinspectionplan.endtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_frequency_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检频率 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_frequency_pie_v2",'robotinspectionplan.frequency_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_frequency_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检频率 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_frequency_pie_v1",'robotinspectionplan.frequency_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_frequency_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检频率 ******************** pie***/ init_echart("echart_robotinspectionplan_frequency_pie",'robotinspectionplan.frequency_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_frequency_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检频率 ******************** line***/ init_echart("echart_robotinspectionplan_frequency_line",'robotinspectionplan.frequency_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_frequency_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检频率 ******************** bar***/ init_echart("echart_robotinspectionplan_frequency_bar",'robotinspectionplan.frequency_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_frequency_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检频率 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_frequency_bar_v1",'robotinspectionplan.frequency_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_inspectionarea_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检区域 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_inspectionarea_pie_v2",'robotinspectionplan.inspectionarea_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_inspectionarea_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检区域 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_inspectionarea_pie_v1",'robotinspectionplan.inspectionarea_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_inspectionarea_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检区域 ******************** pie***/ init_echart("echart_robotinspectionplan_inspectionarea_pie",'robotinspectionplan.inspectionarea_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_inspectionarea_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检区域 ******************** line***/ init_echart("echart_robotinspectionplan_inspectionarea_line",'robotinspectionplan.inspectionarea_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_inspectionarea_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检区域 ******************** bar***/ init_echart("echart_robotinspectionplan_inspectionarea_bar",'robotinspectionplan.inspectionarea_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_inspectionarea_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 巡检区域 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_inspectionarea_bar_v1",'robotinspectionplan.inspectionarea_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 计划状态 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_status_pie_v2",'robotinspectionplan.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 计划状态 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_status_pie_v1",'robotinspectionplan.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 计划状态 ******************** pie***/ init_echart("echart_robotinspectionplan_status_pie",'robotinspectionplan.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_status_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 计划状态 ******************** line***/ init_echart("echart_robotinspectionplan_status_line",'robotinspectionplan.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 计划状态 ******************** bar***/ init_echart("echart_robotinspectionplan_status_bar",'robotinspectionplan.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 计划状态 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_status_bar_v1",'robotinspectionplan.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_createdby_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 创建者 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_createdby_pie_v2",'robotinspectionplan.createdby_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_createdby_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 创建者 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_createdby_pie_v1",'robotinspectionplan.createdby_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_createdby_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 创建者 ******************** pie***/ init_echart("echart_robotinspectionplan_createdby_pie",'robotinspectionplan.createdby_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_createdby_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 创建者 ******************** line***/ init_echart("echart_robotinspectionplan_createdby_line",'robotinspectionplan.createdby_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_createdby_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 创建者 ******************** bar***/ init_echart("echart_robotinspectionplan_createdby_bar",'robotinspectionplan.createdby_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_createdby_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 创建者 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_createdby_bar_v1",'robotinspectionplan.createdby_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedby_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改者 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedby_pie_v2",'robotinspectionplan.lkwkwastmodkwkwifiedby_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedby_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改者 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedby_pie_v1",'robotinspectionplan.lkwkwastmodkwkwifiedby_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedby_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改者 ******************** pie***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedby_pie",'robotinspectionplan.lkwkwastmodkwkwifiedby_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedby_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改者 ******************** line***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedby_line",'robotinspectionplan.lkwkwastmodkwkwifiedby_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedby_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改者 ******************** bar***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedby_bar",'robotinspectionplan.lkwkwastmodkwkwifiedby_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedby_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改者 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedby_bar_v1",'robotinspectionplan.lkwkwastmodkwkwifiedby_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改时间 ******************** pie_v2***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_pie_v2",'robotinspectionplan.lkwkwastmodkwkwifiedtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改时间 ******************** pie_v1***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_pie_v1",'robotinspectionplan.lkwkwastmodkwkwifiedtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改时间 ******************** pie***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_pie",'robotinspectionplan.lkwkwastmodkwkwifiedtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改时间 ******************** line***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_line",'robotinspectionplan.lkwkwastmodkwkwifiedtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改时间 ******************** bar***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_bar",'robotinspectionplan.lkwkwastmodkwkwifiedtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人巡检计划表 最后修改时间 ******************** bar_v1***/ init_echart("echart_robotinspectionplan_lkwkwastmodkwkwifiedtime_bar_v1",'robotinspectionplan.lkwkwastmodkwkwifiedtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人任务表(robottkwkwask)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_tkwkwaskname_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务名称 ******************** pie_v2***/ init_echart("echart_robottkwkwask_tkwkwaskname_pie_v2",'robottkwkwask.tkwkwaskname_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_tkwkwaskname_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务名称 ******************** pie_v1***/ init_echart("echart_robottkwkwask_tkwkwaskname_pie_v1",'robottkwkwask.tkwkwaskname_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_tkwkwaskname_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务名称 ******************** pie***/ init_echart("echart_robottkwkwask_tkwkwaskname_pie",'robottkwkwask.tkwkwaskname_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_tkwkwaskname_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务名称 ******************** line***/ init_echart("echart_robottkwkwask_tkwkwaskname_line",'robottkwkwask.tkwkwaskname_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_tkwkwaskname_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务名称 ******************** bar***/ init_echart("echart_robottkwkwask_tkwkwaskname_bar",'robottkwkwask.tkwkwaskname_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_tkwkwaskname_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务名称 ******************** bar_v1***/ init_echart("echart_robottkwkwask_tkwkwaskname_bar_v1",'robottkwkwask.tkwkwaskname_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_starttime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 开始时间 ******************** pie_v2***/ init_echart("echart_robottkwkwask_starttime_pie_v2",'robottkwkwask.starttime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_starttime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 开始时间 ******************** pie_v1***/ init_echart("echart_robottkwkwask_starttime_pie_v1",'robottkwkwask.starttime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_starttime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 开始时间 ******************** pie***/ init_echart("echart_robottkwkwask_starttime_pie",'robottkwkwask.starttime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_starttime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 开始时间 ******************** line***/ init_echart("echart_robottkwkwask_starttime_line",'robottkwkwask.starttime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_starttime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 开始时间 ******************** bar***/ init_echart("echart_robottkwkwask_starttime_bar",'robottkwkwask.starttime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_starttime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 开始时间 ******************** bar_v1***/ init_echart("echart_robottkwkwask_starttime_bar_v1",'robottkwkwask.starttime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_endtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 结束时间 ******************** pie_v2***/ init_echart("echart_robottkwkwask_endtime_pie_v2",'robottkwkwask.endtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_endtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 结束时间 ******************** pie_v1***/ init_echart("echart_robottkwkwask_endtime_pie_v1",'robottkwkwask.endtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_endtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 结束时间 ******************** pie***/ init_echart("echart_robottkwkwask_endtime_pie",'robottkwkwask.endtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_endtime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 结束时间 ******************** line***/ init_echart("echart_robottkwkwask_endtime_line",'robottkwkwask.endtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_endtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 结束时间 ******************** bar***/ init_echart("echart_robottkwkwask_endtime_bar",'robottkwkwask.endtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_endtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 结束时间 ******************** bar_v1***/ init_echart("echart_robottkwkwask_endtime_bar_v1",'robottkwkwask.endtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_status_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务状态 ******************** pie_v2***/ init_echart("echart_robottkwkwask_status_pie_v2",'robottkwkwask.status_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_status_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务状态 ******************** pie_v1***/ init_echart("echart_robottkwkwask_status_pie_v1",'robottkwkwask.status_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_status_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务状态 ******************** pie***/ init_echart("echart_robottkwkwask_status_pie",'robottkwkwask.status_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_status_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务状态 ******************** line***/ init_echart("echart_robottkwkwask_status_line",'robottkwkwask.status_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_status_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务状态 ******************** bar***/ init_echart("echart_robottkwkwask_status_bar",'robottkwkwask.status_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_status_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务状态 ******************** bar_v1***/ init_echart("echart_robottkwkwask_status_bar_v1",'robottkwkwask.status_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_prikwkwority_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务优先级 ******************** pie_v2***/ init_echart("echart_robottkwkwask_prikwkwority_pie_v2",'robottkwkwask.prikwkwority_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_prikwkwority_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务优先级 ******************** pie_v1***/ init_echart("echart_robottkwkwask_prikwkwority_pie_v1",'robottkwkwask.prikwkwority_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_prikwkwority_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务优先级 ******************** pie***/ init_echart("echart_robottkwkwask_prikwkwority_pie",'robottkwkwask.prikwkwority_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_prikwkwority_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务优先级 ******************** line***/ init_echart("echart_robottkwkwask_prikwkwority_line",'robottkwkwask.prikwkwority_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_prikwkwority_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务优先级 ******************** bar***/ init_echart("echart_robottkwkwask_prikwkwority_bar",'robottkwkwask.prikwkwority_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_prikwkwority_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务优先级 ******************** bar_v1***/ init_echart("echart_robottkwkwask_prikwkwority_bar_v1",'robottkwkwask.prikwkwority_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_details_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务详情 ******************** pie_v2***/ init_echart("echart_robottkwkwask_details_pie_v2",'robottkwkwask.details_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_details_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务详情 ******************** pie_v1***/ init_echart("echart_robottkwkwask_details_pie_v1",'robottkwkwask.details_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_details_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务详情 ******************** pie***/ init_echart("echart_robottkwkwask_details_pie",'robottkwkwask.details_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_details_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务详情 ******************** line***/ init_echart("echart_robottkwkwask_details_line",'robottkwkwask.details_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_details_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务详情 ******************** bar***/ init_echart("echart_robottkwkwask_details_bar",'robottkwkwask.details_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_details_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 任务详情 ******************** bar_v1***/ init_echart("echart_robottkwkwask_details_bar_v1",'robottkwkwask.details_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_failurerekwkwason_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 失败原因 ******************** pie_v2***/ init_echart("echart_robottkwkwask_failurerekwkwason_pie_v2",'robottkwkwask.failurerekwkwason_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_failurerekwkwason_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 失败原因 ******************** pie_v1***/ init_echart("echart_robottkwkwask_failurerekwkwason_pie_v1",'robottkwkwask.failurerekwkwason_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robottkwkwask_failurerekwkwason_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 失败原因 ******************** pie***/ init_echart("echart_robottkwkwask_failurerekwkwason_pie",'robottkwkwask.failurerekwkwason_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robottkwkwask_failurerekwkwason_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 失败原因 ******************** line***/ init_echart("echart_robottkwkwask_failurerekwkwason_line",'robottkwkwask.failurerekwkwason_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_failurerekwkwason_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 失败原因 ******************** bar***/ init_echart("echart_robottkwkwask_failurerekwkwason_bar",'robottkwkwask.failurerekwkwason_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robottkwkwask_failurerekwkwason_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人任务表 失败原因 ******************** bar_v1***/ init_echart("echart_robottkwkwask_failurerekwkwason_bar_v1",'robottkwkwask.failurerekwkwason_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

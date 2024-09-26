@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人维护周期表(robotmakwkwintenancecycle)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancecycle_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护周期天数 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancecycle_pie_v2",'robotmakwkwintenancecycle.makwkwintenancecycle_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancecycle_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护周期天数 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancecycle_pie_v1",'robotmakwkwintenancecycle.makwkwintenancecycle_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancecycle_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护周期天数 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancecycle_pie",'robotmakwkwintenancecycle.makwkwintenancecycle_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancecycle_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护周期天数 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancecycle_line",'robotmakwkwintenancecycle.makwkwintenancecycle_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancecycle_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护周期天数 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancecycle_bar",'robotmakwkwintenancecycle.makwkwintenancecycle_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancecycle_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护周期天数 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancecycle_bar_v1",'robotmakwkwintenancecycle.makwkwintenancecycle_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 上次维护日期 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_pie_v2",'robotmakwkwintenancecycle.lkwkwastmakwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 上次维护日期 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_pie_v1",'robotmakwkwintenancecycle.lkwkwastmakwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 上次维护日期 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_pie",'robotmakwkwintenancecycle.lkwkwastmakwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 上次维护日期 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_line",'robotmakwkwintenancecycle.lkwkwastmakwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 上次维护日期 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_bar",'robotmakwkwintenancecycle.lkwkwastmakwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 上次维护日期 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_lkwkwastmakwkwintenancedate_bar_v1",'robotmakwkwintenancecycle.lkwkwastmakwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 下次维护日期 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_pie_v2",'robotmakwkwintenancecycle.nextmakwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 下次维护日期 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_pie_v1",'robotmakwkwintenancecycle.nextmakwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 下次维护日期 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_pie",'robotmakwkwintenancecycle.nextmakwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 下次维护日期 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_line",'robotmakwkwintenancecycle.nextmakwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 下次维护日期 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_bar",'robotmakwkwintenancecycle.nextmakwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 下次维护日期 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_nextmakwkwintenancedate_bar_v1",'robotmakwkwintenancecycle.nextmakwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancestatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护状态如待维护、维护中、已完成 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancestatus_pie_v2",'robotmakwkwintenancecycle.makwkwintenancestatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancestatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护状态如待维护、维护中、已完成 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancestatus_pie_v1",'robotmakwkwintenancecycle.makwkwintenancestatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancestatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护状态如待维护、维护中、已完成 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancestatus_pie",'robotmakwkwintenancecycle.makwkwintenancestatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancestatus_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护状态如待维护、维护中、已完成 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancestatus_line",'robotmakwkwintenancecycle.makwkwintenancestatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancestatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护状态如待维护、维护中、已完成 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancestatus_bar",'robotmakwkwintenancecycle.makwkwintenancestatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancestatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护状态如待维护、维护中、已完成 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancestatus_bar_v1",'robotmakwkwintenancecycle.makwkwintenancestatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancetype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护类型如常规检查、深度保养、故障修复 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancetype_pie_v2",'robotmakwkwintenancecycle.makwkwintenancetype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancetype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护类型如常规检查、深度保养、故障修复 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancetype_pie_v1",'robotmakwkwintenancecycle.makwkwintenancetype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancetype_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护类型如常规检查、深度保养、故障修复 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancetype_pie",'robotmakwkwintenancecycle.makwkwintenancetype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancetype_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护类型如常规检查、深度保养、故障修复 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancetype_line",'robotmakwkwintenancecycle.makwkwintenancetype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancetype_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护类型如常规检查、深度保养、故障修复 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancetype_bar",'robotmakwkwintenancecycle.makwkwintenancetype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancetype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护类型如常规检查、深度保养、故障修复 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancetype_bar_v1",'robotmakwkwintenancecycle.makwkwintenancetype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancenotes_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护备注 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancenotes_pie_v2",'robotmakwkwintenancecycle.makwkwintenancenotes_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancenotes_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护备注 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancenotes_pie_v1",'robotmakwkwintenancecycle.makwkwintenancenotes_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancenotes_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护备注 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancenotes_pie",'robotmakwkwintenancecycle.makwkwintenancenotes_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancenotes_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护备注 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancenotes_line",'robotmakwkwintenancecycle.makwkwintenancenotes_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancenotes_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护备注 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancenotes_bar",'robotmakwkwintenancecycle.makwkwintenancenotes_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_makwkwintenancenotes_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 维护备注 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_makwkwintenancenotes_bar_v1",'robotmakwkwintenancecycle.makwkwintenancenotes_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdby_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建人 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_createdby_pie_v2",'robotmakwkwintenancecycle.createdby_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdby_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建人 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_createdby_pie_v1",'robotmakwkwintenancecycle.createdby_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdby_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建人 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_createdby_pie",'robotmakwkwintenancecycle.createdby_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdby_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建人 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_createdby_line",'robotmakwkwintenancecycle.createdby_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdby_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建人 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_createdby_bar",'robotmakwkwintenancecycle.createdby_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdby_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建人 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_createdby_bar_v1",'robotmakwkwintenancecycle.createdby_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建时间 ******************** pie_v2***/ init_echart("echart_robotmakwkwintenancecycle_createdat_pie_v2",'robotmakwkwintenancecycle.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建时间 ******************** pie_v1***/ init_echart("echart_robotmakwkwintenancecycle_createdat_pie_v1",'robotmakwkwintenancecycle.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建时间 ******************** pie***/ init_echart("echart_robotmakwkwintenancecycle_createdat_pie",'robotmakwkwintenancecycle.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建时间 ******************** line***/ init_echart("echart_robotmakwkwintenancecycle_createdat_line",'robotmakwkwintenancecycle.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建时间 ******************** bar***/ init_echart("echart_robotmakwkwintenancecycle_createdat_bar",'robotmakwkwintenancecycle.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotmakwkwintenancecycle_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人维护周期表 创建时间 ******************** bar_v1***/ init_echart("echart_robotmakwkwintenancecycle_createdat_bar_v1",'robotmakwkwintenancecycle.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

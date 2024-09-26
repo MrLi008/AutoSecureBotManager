@@ -1,0 +1,927 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+报警记录表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>报警记录表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpalarmreckwkword" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row">
+<form action="" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="robotid">机器人ID关联字段(robotid)</label>
+<select name="robotid_search" id="robotid_search">
+<option value="">未选择</option>
+{% for record in data_mc_robotinfo_55574 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/alarmreckwkword">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_id.mcauthview %}
+<td>
+记录ID
+</td>
+{% endif %}
+
+{% if mcauthfield_alarmtime.mcauthview %}
+<td>
+报警时间
+</td>
+{% endif %}
+
+{% if mcauthfield_alarmtype.mcauthview %}
+<td>
+报警类型
+</td>
+{% endif %}
+
+{% if mcauthfield_alarmlevel.mcauthview %}
+<td>
+报警等级
+</td>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+<td>
+报警描述
+</td>
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview %}
+<td>
+机器人ID关联字段
+</td>
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthview %}
+<td>
+是否已解决
+</td>
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthview %}
+<td>
+解决时间
+</td>
+{% endif %}
+
+{% if mcauthfield_location.mcauthview %}
+<td>
+报警位置
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_id.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.id}}">
+{{record.id}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_alarmtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.alarmtime}}">
+{{record.alarmtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_alarmtype.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.alarmtype}}">
+{{record.alarmtype}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_alarmlevel.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.alarmlevel}}">
+{{record.alarmlevel}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_description.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.description %}
+{{record.description.name}}
+<p title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_robotid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.robotid}}">
+{{record.robotid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_resolved.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.resolved}}">
+{{record.resolved}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_resolvedtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.resolvedtime}}">
+{{record.resolvedtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_location.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.location}}">
+{{record.location}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_id.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="id" class="form-label form-group">记录ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_alarmtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="alarmtime" class="form-label form-group">报警时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_alarmtype.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="alarmtype" class="form-label form-group">报警类型</label>
+
+<input type="text" class="form-control form-control-lg" name="alarmtype" id="alarmtype"{% if not mcauthfield_alarmtype.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_alarmlevel.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="alarmlevel" class="form-label form-group">报警等级</label>
+
+<input type="text" class="form-control form-control-lg" name="alarmlevel" id="alarmlevel"{% if not mcauthfield_alarmlevel.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_description.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="description" class="form-label form-group">报警描述</label>
+
+<textarea class="form-control form-control-lg" name="description" id="description" {% if not mcauthfield_description.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_robotid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="robotid" class="form-label form-group">机器人ID关联字段</label>
+
+<select class="form-select form-select-lg mb-3" name="robotid" id="robotid" {% if not mcauthfield_robotid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_robotinfo_55574 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_resolved.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="resolved" class="form-label form-group">是否已解决</label>
+
+<select class="form-select form-select-lg mb-3" name="resolved" id="resolved" {% if not mcauthfield_resolved.mcisblank %}required {% endif %} data-name="insert">
+<option value="True" selected >是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_resolvedtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="resolvedtime" class="form-label form-group">解决时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_location.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="location" class="form-label form-group">报警位置</label>
+
+<input type="text" class="form-control form-control-lg" name="location" id="location"{% if not mcauthfield_location.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_id.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="id_upd"
+class="form-label form-group">
+记录ID(id)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_alarmtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="alarmtime_upd"
+class="form-label form-group">
+报警时间(alarmtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_alarmtype.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="alarmtype_upd"
+class="form-label form-group">
+报警类型(alarmtype)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="alarmtype"
+id="alarmtype_upd"
+placeholder="报警类型"
+{% if not mcauthfield_alarmtype.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_alarmtype.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_alarmlevel.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="alarmlevel_upd"
+class="form-label form-group">
+报警等级(alarmlevel)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="alarmlevel"
+id="alarmlevel_upd"
+placeholder="报警等级"
+{% if not mcauthfield_alarmlevel.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_alarmlevel.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_description.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="description_upd"
+class="form-label form-group">
+报警描述(description)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="description"
+id="description_upd"
+placeholder="报警描述"
+{% if not mcauthfield_description.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_description.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_robotid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="robotid_upd"
+class="form-label form-group">
+机器人ID关联字段(robotid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="robotid"
+id="robotid_upd"
+{% if not mcauthfield_robotid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_robotid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_robotinfo_55574 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_resolved.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="resolved_upd"
+class="form-label form-group">
+是否已解决(resolved)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="resolved"
+id="resolved_upd"
+{% if not mcauthfield_resolved.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_resolved.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="True" selected>是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_resolvedtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="resolvedtime_upd"
+class="form-label form-group">
+解决时间(resolvedtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_location.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="location_upd"
+class="form-label form-group">
+报警位置(location)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="location"
+id="location_upd"
+placeholder="报警位置"
+{% if not mcauthfield_location.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_location.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_id.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">记录ID</p>
+
+<p id="id_view">
+{{record.id|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_alarmtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">报警时间</p>
+
+<p id="alarmtime_view">
+{{record.alarmtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_alarmtype.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">报警类型</p>
+
+<p id="alarmtype_view">
+{{record.alarmtype|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_alarmlevel.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">报警等级</p>
+
+<p id="alarmlevel_view">
+{{record.alarmlevel|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">报警描述</p>
+
+<p id="description_view">
+{{record.description|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">机器人ID关联字段</p>
+
+<p id="robotid_view">
+{{record.robotid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">是否已解决</p>
+
+<p id="resolved_view">
+{{record.resolved|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">解决时间</p>
+
+<p id="resolvedtime_view">
+{{record.resolvedtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_location.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">报警位置</p>
+
+<p id="location_view">
+{{record.location|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/alarmreckwkword";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/alarmreckwkword',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_id.mcauthview %}
+$("#id_upd").val(resp.ins.id);
+{% endif %}
+
+{% if mcauthfield_alarmtime.mcauthview %}
+$("#alarmtime_upd").val(resp.ins.alarmtime);
+{% endif %}
+
+{% if mcauthfield_alarmtype.mcauthview %}
+$("#alarmtype_upd").val(resp.ins.alarmtype);
+{% endif %}
+
+{% if mcauthfield_alarmlevel.mcauthview %}
+$("#alarmlevel_upd").val(resp.ins.alarmlevel);
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+$("#description_upd").val(resp.ins.description);
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthview %}
+$("#robotid_upd").val(resp.ins.robotid);
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthview %}
+$("#resolved_upd").val(resp.ins.resolved);
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthview %}
+$("#resolvedtime_upd").val(resp.ins.resolvedtime);
+{% endif %}
+
+{% if mcauthfield_location.mcauthview %}
+$("#location_upd").val(resp.ins.location);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_id.mcauthchange %}
+id:$("#id_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_alarmtime.mcauthchange %}
+alarmtime:$("#alarmtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_alarmtype.mcauthchange %}
+alarmtype:$("#alarmtype_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_alarmlevel.mcauthchange %}
+alarmlevel:$("#alarmlevel_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_description.mcauthchange %}
+description:$("#description_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_robotid.mcauthchange %}
+robotid:$("#robotid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_resolved.mcauthchange %}
+resolved:$("#resolved_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_resolvedtime.mcauthchange %}
+resolvedtime:$("#resolvedtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_location.mcauthchange %}
+location:$("#location_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/alarmreckwkword',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/alarmreckwkword',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_id.mcauthview %}
+document.getElementById("id_view").innerHTML=resp.ins.id;
+{% endif %}
+
+
+
+
+{% if mcauthfield_alarmtime.mcauthview %}
+document.getElementById("alarmtime_view").innerHTML=resp.ins.alarmtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_alarmtype.mcauthview %}
+document.getElementById("alarmtype_view").innerHTML=resp.ins.alarmtype;
+{% endif %}
+
+
+
+
+{% if mcauthfield_alarmlevel.mcauthview %}
+document.getElementById("alarmlevel_view").innerHTML=resp.ins.alarmlevel;
+{% endif %}
+
+
+
+
+{% if mcauthfield_description.mcauthview %}
+document.getElementById("description_view").innerHTML=resp.ins.description;
+{% endif %}
+
+
+
+
+{% if mcauthfield_robotid.mcauthview %}
+document.getElementById("robotid_view").innerHTML=resp.ins.robotid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_resolved.mcauthview %}
+document.getElementById("resolved_view").innerHTML=resp.ins.resolved;
+{% endif %}
+
+
+
+
+{% if mcauthfield_resolvedtime.mcauthview %}
+document.getElementById("resolvedtime_view").innerHTML=resp.ins.resolvedtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_location.mcauthview %}
+document.getElementById("location_view").innerHTML=resp.ins.location;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/alarmreckwkword',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

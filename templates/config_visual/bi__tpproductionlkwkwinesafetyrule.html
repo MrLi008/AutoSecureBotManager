@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 生产线安全规则表(productionlkwkwinesafetyrule)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_rulename_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则名称 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_rulename_pie_v2",'productionlkwkwinesafetyrule.rulename_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_rulename_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则名称 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_rulename_pie_v1",'productionlkwkwinesafetyrule.rulename_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_rulename_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则名称 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_rulename_pie",'productionlkwkwinesafetyrule.rulename_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_rulename_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则名称 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_rulename_line",'productionlkwkwinesafetyrule.rulename_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_rulename_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则名称 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_rulename_bar",'productionlkwkwinesafetyrule.rulename_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_rulename_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则名称 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_rulename_bar_v1",'productionlkwkwinesafetyrule.rulename_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_ruledescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则描述 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_ruledescription_pie_v2",'productionlkwkwinesafetyrule.ruledescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_ruledescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则描述 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_ruledescription_pie_v1",'productionlkwkwinesafetyrule.ruledescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_ruledescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则描述 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_ruledescription_pie",'productionlkwkwinesafetyrule.ruledescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_ruledescription_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则描述 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_ruledescription_line",'productionlkwkwinesafetyrule.ruledescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_ruledescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则描述 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_ruledescription_bar",'productionlkwkwinesafetyrule.ruledescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_ruledescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 规则描述 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_ruledescription_bar_v1",'productionlkwkwinesafetyrule.ruledescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_severitylevel_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 严重等级 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_severitylevel_pie_v2",'productionlkwkwinesafetyrule.severitylevel_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_severitylevel_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 严重等级 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_severitylevel_pie_v1",'productionlkwkwinesafetyrule.severitylevel_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_severitylevel_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 严重等级 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_severitylevel_pie",'productionlkwkwinesafetyrule.severitylevel_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_severitylevel_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 严重等级 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_severitylevel_line",'productionlkwkwinesafetyrule.severitylevel_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_severitylevel_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 严重等级 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_severitylevel_bar",'productionlkwkwinesafetyrule.severitylevel_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_severitylevel_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 严重等级 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_severitylevel_bar_v1",'productionlkwkwinesafetyrule.severitylevel_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_detectionmethod_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 检测方式 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_detectionmethod_pie_v2",'productionlkwkwinesafetyrule.detectionmethod_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_detectionmethod_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 检测方式 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_detectionmethod_pie_v1",'productionlkwkwinesafetyrule.detectionmethod_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_detectionmethod_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 检测方式 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_detectionmethod_pie",'productionlkwkwinesafetyrule.detectionmethod_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_detectionmethod_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 检测方式 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_detectionmethod_line",'productionlkwkwinesafetyrule.detectionmethod_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_detectionmethod_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 检测方式 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_detectionmethod_bar",'productionlkwkwinesafetyrule.detectionmethod_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_detectionmethod_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 检测方式 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_detectionmethod_bar_v1",'productionlkwkwinesafetyrule.detectionmethod_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertthreshold_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警阈值 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_alertthreshold_pie_v2",'productionlkwkwinesafetyrule.alertthreshold_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertthreshold_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警阈值 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_alertthreshold_pie_v1",'productionlkwkwinesafetyrule.alertthreshold_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertthreshold_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警阈值 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_alertthreshold_pie",'productionlkwkwinesafetyrule.alertthreshold_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertthreshold_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警阈值 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_alertthreshold_line",'productionlkwkwinesafetyrule.alertthreshold_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertthreshold_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警阈值 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_alertthreshold_bar",'productionlkwkwinesafetyrule.alertthreshold_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertthreshold_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警阈值 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_alertthreshold_bar_v1",'productionlkwkwinesafetyrule.alertthreshold_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertrecipients_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警接收人 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_alertrecipients_pie_v2",'productionlkwkwinesafetyrule.alertrecipients_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertrecipients_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警接收人 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_alertrecipients_pie_v1",'productionlkwkwinesafetyrule.alertrecipients_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertrecipients_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警接收人 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_alertrecipients_pie",'productionlkwkwinesafetyrule.alertrecipients_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertrecipients_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警接收人 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_alertrecipients_line",'productionlkwkwinesafetyrule.alertrecipients_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertrecipients_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警接收人 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_alertrecipients_bar",'productionlkwkwinesafetyrule.alertrecipients_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_alertrecipients_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 报警接收人 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_alertrecipients_bar_v1",'productionlkwkwinesafetyrule.alertrecipients_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_createdat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 创建时间 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_createdat_pie_v2",'productionlkwkwinesafetyrule.createdat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_createdat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 创建时间 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_createdat_pie_v1",'productionlkwkwinesafetyrule.createdat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_createdat_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 创建时间 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_createdat_pie",'productionlkwkwinesafetyrule.createdat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_createdat_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 创建时间 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_createdat_line",'productionlkwkwinesafetyrule.createdat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_createdat_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 创建时间 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_createdat_bar",'productionlkwkwinesafetyrule.createdat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_createdat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 创建时间 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_createdat_bar_v1",'productionlkwkwinesafetyrule.createdat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_modkwkwifiedat_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 修改时间 ******************** pie_v2***/ init_echart("echart_productionlkwkwinesafetyrule_modkwkwifiedat_pie_v2",'productionlkwkwinesafetyrule.modkwkwifiedat_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_modkwkwifiedat_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 修改时间 ******************** pie_v1***/ init_echart("echart_productionlkwkwinesafetyrule_modkwkwifiedat_pie_v1",'productionlkwkwinesafetyrule.modkwkwifiedat_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_modkwkwifiedat_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 修改时间 ******************** pie***/ init_echart("echart_productionlkwkwinesafetyrule_modkwkwifiedat_pie",'productionlkwkwinesafetyrule.modkwkwifiedat_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_modkwkwifiedat_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 修改时间 ******************** line***/ init_echart("echart_productionlkwkwinesafetyrule_modkwkwifiedat_line",'productionlkwkwinesafetyrule.modkwkwifiedat_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_modkwkwifiedat_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 修改时间 ******************** bar***/ init_echart("echart_productionlkwkwinesafetyrule_modkwkwifiedat_bar",'productionlkwkwinesafetyrule.modkwkwifiedat_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwinesafetyrule_modkwkwifiedat_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线安全规则表 修改时间 ******************** bar_v1***/ init_echart("echart_productionlkwkwinesafetyrule_modkwkwifiedat_bar_v1",'productionlkwkwinesafetyrule.modkwkwifiedat_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

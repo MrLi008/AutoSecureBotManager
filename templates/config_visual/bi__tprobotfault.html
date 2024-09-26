@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人故障表(robotfault)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faulttype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障类型 ******************** pie_v2***/ init_echart("echart_robotfault_faulttype_pie_v2",'robotfault.faulttype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faulttype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障类型 ******************** pie_v1***/ init_echart("echart_robotfault_faulttype_pie_v1",'robotfault.faulttype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faulttype_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障类型 ******************** pie***/ init_echart("echart_robotfault_faulttype_pie",'robotfault.faulttype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_faulttype_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障类型 ******************** line***/ init_echart("echart_robotfault_faulttype_line",'robotfault.faulttype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faulttype_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障类型 ******************** bar***/ init_echart("echart_robotfault_faulttype_bar",'robotfault.faulttype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faulttype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障类型 ******************** bar_v1***/ init_echart("echart_robotfault_faulttype_bar_v1",'robotfault.faulttype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faultdescription_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障描述 ******************** pie_v2***/ init_echart("echart_robotfault_faultdescription_pie_v2",'robotfault.faultdescription_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faultdescription_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障描述 ******************** pie_v1***/ init_echart("echart_robotfault_faultdescription_pie_v1",'robotfault.faultdescription_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faultdescription_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障描述 ******************** pie***/ init_echart("echart_robotfault_faultdescription_pie",'robotfault.faultdescription_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_faultdescription_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障描述 ******************** line***/ init_echart("echart_robotfault_faultdescription_line",'robotfault.faultdescription_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faultdescription_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障描述 ******************** bar***/ init_echart("echart_robotfault_faultdescription_bar",'robotfault.faultdescription_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faultdescription_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障描述 ******************** bar_v1***/ init_echart("echart_robotfault_faultdescription_bar_v1",'robotfault.faultdescription_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faulttime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障时间 ******************** pie_v2***/ init_echart("echart_robotfault_faulttime_pie_v2",'robotfault.faulttime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faulttime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障时间 ******************** pie_v1***/ init_echart("echart_robotfault_faulttime_pie_v1",'robotfault.faulttime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faulttime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障时间 ******************** pie***/ init_echart("echart_robotfault_faulttime_pie",'robotfault.faulttime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_faulttime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障时间 ******************** line***/ init_echart("echart_robotfault_faulttime_line",'robotfault.faulttime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faulttime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障时间 ******************** bar***/ init_echart("echart_robotfault_faulttime_bar",'robotfault.faulttime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faulttime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障时间 ******************** bar_v1***/ init_echart("echart_robotfault_faulttime_bar_v1",'robotfault.faulttime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairstatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修状态 ******************** pie_v2***/ init_echart("echart_robotfault_repairstatus_pie_v2",'robotfault.repairstatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairstatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修状态 ******************** pie_v1***/ init_echart("echart_robotfault_repairstatus_pie_v1",'robotfault.repairstatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairstatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修状态 ******************** pie***/ init_echart("echart_robotfault_repairstatus_pie",'robotfault.repairstatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_repairstatus_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修状态 ******************** line***/ init_echart("echart_robotfault_repairstatus_line",'robotfault.repairstatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_repairstatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修状态 ******************** bar***/ init_echart("echart_robotfault_repairstatus_bar",'robotfault.repairstatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_repairstatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修状态 ******************** bar_v1***/ init_echart("echart_robotfault_repairstatus_bar_v1",'robotfault.repairstatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修时间 ******************** pie_v2***/ init_echart("echart_robotfault_repairtime_pie_v2",'robotfault.repairtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修时间 ******************** pie_v1***/ init_echart("echart_robotfault_repairtime_pie_v1",'robotfault.repairtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修时间 ******************** pie***/ init_echart("echart_robotfault_repairtime_pie",'robotfault.repairtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_repairtime_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修时间 ******************** line***/ init_echart("echart_robotfault_repairtime_line",'robotfault.repairtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_repairtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修时间 ******************** bar***/ init_echart("echart_robotfault_repairtime_bar",'robotfault.repairtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_repairtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修时间 ******************** bar_v1***/ init_echart("echart_robotfault_repairtime_bar_v1",'robotfault.repairtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairperson_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修人员 ******************** pie_v2***/ init_echart("echart_robotfault_repairperson_pie_v2",'robotfault.repairperson_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairperson_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修人员 ******************** pie_v1***/ init_echart("echart_robotfault_repairperson_pie_v1",'robotfault.repairperson_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_repairperson_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修人员 ******************** pie***/ init_echart("echart_robotfault_repairperson_pie",'robotfault.repairperson_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_repairperson_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修人员 ******************** line***/ init_echart("echart_robotfault_repairperson_line",'robotfault.repairperson_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_repairperson_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修人员 ******************** bar***/ init_echart("echart_robotfault_repairperson_bar",'robotfault.repairperson_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_repairperson_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 维修人员 ******************** bar_v1***/ init_echart("echart_robotfault_repairperson_bar_v1",'robotfault.repairperson_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faultseverity_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障严重程度 ******************** pie_v2***/ init_echart("echart_robotfault_faultseverity_pie_v2",'robotfault.faultseverity_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faultseverity_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障严重程度 ******************** pie_v1***/ init_echart("echart_robotfault_faultseverity_pie_v1",'robotfault.faultseverity_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfault_faultseverity_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障严重程度 ******************** pie***/ init_echart("echart_robotfault_faultseverity_pie",'robotfault.faultseverity_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfault_faultseverity_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障严重程度 ******************** line***/ init_echart("echart_robotfault_faultseverity_line",'robotfault.faultseverity_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faultseverity_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障严重程度 ******************** bar***/ init_echart("echart_robotfault_faultseverity_bar",'robotfault.faultseverity_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfault_faultseverity_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人故障表 故障严重程度 ******************** bar_v1***/ init_echart("echart_robotfault_faultseverity_bar_v1",'robotfault.faultseverity_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

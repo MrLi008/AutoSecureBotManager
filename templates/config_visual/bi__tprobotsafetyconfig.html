@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人安全配置表(robotsafetyconfig)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_safetylevel_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 安全等级 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_safetylevel_pie_v2",'robotsafetyconfig.safetylevel_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_safetylevel_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 安全等级 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_safetylevel_pie_v1",'robotsafetyconfig.safetylevel_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_safetylevel_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 安全等级 ******************** pie***/ init_echart("echart_robotsafetyconfig_safetylevel_pie",'robotsafetyconfig.safetylevel_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_safetylevel_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 安全等级 ******************** line***/ init_echart("echart_robotsafetyconfig_safetylevel_line",'robotsafetyconfig.safetylevel_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_safetylevel_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 安全等级 ******************** bar***/ init_echart("echart_robotsafetyconfig_safetylevel_bar",'robotsafetyconfig.safetylevel_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_safetylevel_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 安全等级 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_safetylevel_bar_v1",'robotsafetyconfig.safetylevel_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_alertthreshold_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 警报阈值 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_alertthreshold_pie_v2",'robotsafetyconfig.alertthreshold_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_alertthreshold_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 警报阈值 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_alertthreshold_pie_v1",'robotsafetyconfig.alertthreshold_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_alertthreshold_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 警报阈值 ******************** pie***/ init_echart("echart_robotsafetyconfig_alertthreshold_pie",'robotsafetyconfig.alertthreshold_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_alertthreshold_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 警报阈值 ******************** line***/ init_echart("echart_robotsafetyconfig_alertthreshold_line",'robotsafetyconfig.alertthreshold_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_alertthreshold_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 警报阈值 ******************** bar***/ init_echart("echart_robotsafetyconfig_alertthreshold_bar",'robotsafetyconfig.alertthreshold_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_alertthreshold_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 警报阈值 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_alertthreshold_bar_v1",'robotsafetyconfig.alertthreshold_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_emergencystopcode_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 紧急停止码 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_emergencystopcode_pie_v2",'robotsafetyconfig.emergencystopcode_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_emergencystopcode_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 紧急停止码 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_emergencystopcode_pie_v1",'robotsafetyconfig.emergencystopcode_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_emergencystopcode_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 紧急停止码 ******************** pie***/ init_echart("echart_robotsafetyconfig_emergencystopcode_pie",'robotsafetyconfig.emergencystopcode_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_emergencystopcode_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 紧急停止码 ******************** line***/ init_echart("echart_robotsafetyconfig_emergencystopcode_line",'robotsafetyconfig.emergencystopcode_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_emergencystopcode_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 紧急停止码 ******************** bar***/ init_echart("echart_robotsafetyconfig_emergencystopcode_bar",'robotsafetyconfig.emergencystopcode_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_emergencystopcode_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 紧急停止码 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_emergencystopcode_bar_v1",'robotsafetyconfig.emergencystopcode_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_makwkwintenanceinterval_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 维护间隔 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_makwkwintenanceinterval_pie_v2",'robotsafetyconfig.makwkwintenanceinterval_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_makwkwintenanceinterval_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 维护间隔 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_makwkwintenanceinterval_pie_v1",'robotsafetyconfig.makwkwintenanceinterval_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_makwkwintenanceinterval_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 维护间隔 ******************** pie***/ init_echart("echart_robotsafetyconfig_makwkwintenanceinterval_pie",'robotsafetyconfig.makwkwintenanceinterval_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_makwkwintenanceinterval_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 维护间隔 ******************** line***/ init_echart("echart_robotsafetyconfig_makwkwintenanceinterval_line",'robotsafetyconfig.makwkwintenanceinterval_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_makwkwintenanceinterval_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 维护间隔 ******************** bar***/ init_echart("echart_robotsafetyconfig_makwkwintenanceinterval_bar",'robotsafetyconfig.makwkwintenanceinterval_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_makwkwintenanceinterval_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 维护间隔 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_makwkwintenanceinterval_bar_v1",'robotsafetyconfig.makwkwintenanceinterval_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 上次维护日期 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_pie_v2",'robotsafetyconfig.lkwkwastmakwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 上次维护日期 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_pie_v1",'robotsafetyconfig.lkwkwastmakwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 上次维护日期 ******************** pie***/ init_echart("echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_pie",'robotsafetyconfig.lkwkwastmakwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 上次维护日期 ******************** line***/ init_echart("echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_line",'robotsafetyconfig.lkwkwastmakwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 上次维护日期 ******************** bar***/ init_echart("echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_bar",'robotsafetyconfig.lkwkwastmakwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 上次维护日期 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_lkwkwastmakwkwintenancedate_bar_v1",'robotsafetyconfig.lkwkwastmakwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_operatkwkwingstatus_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 运行状态 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_operatkwkwingstatus_pie_v2",'robotsafetyconfig.operatkwkwingstatus_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_operatkwkwingstatus_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 运行状态 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_operatkwkwingstatus_pie_v1",'robotsafetyconfig.operatkwkwingstatus_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_operatkwkwingstatus_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 运行状态 ******************** pie***/ init_echart("echart_robotsafetyconfig_operatkwkwingstatus_pie",'robotsafetyconfig.operatkwkwingstatus_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_operatkwkwingstatus_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 运行状态 ******************** line***/ init_echart("echart_robotsafetyconfig_operatkwkwingstatus_line",'robotsafetyconfig.operatkwkwingstatus_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_operatkwkwingstatus_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 运行状态 ******************** bar***/ init_echart("echart_robotsafetyconfig_operatkwkwingstatus_bar",'robotsafetyconfig.operatkwkwingstatus_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_operatkwkwingstatus_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 运行状态 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_operatkwkwingstatus_bar_v1",'robotsafetyconfig.operatkwkwingstatus_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_faulthkwkwistkwkwory_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 故障历史 ******************** pie_v2***/ init_echart("echart_robotsafetyconfig_faulthkwkwistkwkwory_pie_v2",'robotsafetyconfig.faulthkwkwistkwkwory_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_faulthkwkwistkwkwory_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 故障历史 ******************** pie_v1***/ init_echart("echart_robotsafetyconfig_faulthkwkwistkwkwory_pie_v1",'robotsafetyconfig.faulthkwkwistkwkwory_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotsafetyconfig_faulthkwkwistkwkwory_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 故障历史 ******************** pie***/ init_echart("echart_robotsafetyconfig_faulthkwkwistkwkwory_pie",'robotsafetyconfig.faulthkwkwistkwkwory_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotsafetyconfig_faulthkwkwistkwkwory_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 故障历史 ******************** line***/ init_echart("echart_robotsafetyconfig_faulthkwkwistkwkwory_line",'robotsafetyconfig.faulthkwkwistkwkwory_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_faulthkwkwistkwkwory_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 故障历史 ******************** bar***/ init_echart("echart_robotsafetyconfig_faulthkwkwistkwkwory_bar",'robotsafetyconfig.faulthkwkwistkwkwory_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotsafetyconfig_faulthkwkwistkwkwory_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人安全配置表 故障历史 ******************** bar_v1***/ init_echart("echart_robotsafetyconfig_faulthkwkwistkwkwory_bar_v1",'robotsafetyconfig.faulthkwkwistkwkwory_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

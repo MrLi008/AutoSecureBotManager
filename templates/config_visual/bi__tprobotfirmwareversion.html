@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 机器人固件版本表(robotfirmwareversion)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_firmwareversion_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件版本号 ******************** pie_v2***/ init_echart("echart_robotfirmwareversion_firmwareversion_pie_v2",'robotfirmwareversion.firmwareversion_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_firmwareversion_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件版本号 ******************** pie_v1***/ init_echart("echart_robotfirmwareversion_firmwareversion_pie_v1",'robotfirmwareversion.firmwareversion_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_firmwareversion_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件版本号 ******************** pie***/ init_echart("echart_robotfirmwareversion_firmwareversion_pie",'robotfirmwareversion.firmwareversion_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareversion_firmwareversion_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件版本号 ******************** line***/ init_echart("echart_robotfirmwareversion_firmwareversion_line",'robotfirmwareversion.firmwareversion_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_firmwareversion_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件版本号 ******************** bar***/ init_echart("echart_robotfirmwareversion_firmwareversion_bar",'robotfirmwareversion.firmwareversion_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_firmwareversion_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件版本号 ******************** bar_v1***/ init_echart("echart_robotfirmwareversion_firmwareversion_bar_v1",'robotfirmwareversion.firmwareversion_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_relekwkwasedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 发布日期 ******************** pie_v2***/ init_echart("echart_robotfirmwareversion_relekwkwasedate_pie_v2",'robotfirmwareversion.relekwkwasedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_relekwkwasedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 发布日期 ******************** pie_v1***/ init_echart("echart_robotfirmwareversion_relekwkwasedate_pie_v1",'robotfirmwareversion.relekwkwasedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_relekwkwasedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 发布日期 ******************** pie***/ init_echart("echart_robotfirmwareversion_relekwkwasedate_pie",'robotfirmwareversion.relekwkwasedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareversion_relekwkwasedate_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 发布日期 ******************** line***/ init_echart("echart_robotfirmwareversion_relekwkwasedate_line",'robotfirmwareversion.relekwkwasedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_relekwkwasedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 发布日期 ******************** bar***/ init_echart("echart_robotfirmwareversion_relekwkwasedate_bar",'robotfirmwareversion.relekwkwasedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_relekwkwasedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 发布日期 ******************** bar_v1***/ init_echart("echart_robotfirmwareversion_relekwkwasedate_bar_v1",'robotfirmwareversion.relekwkwasedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_manufacturer_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 制造商 ******************** pie_v2***/ init_echart("echart_robotfirmwareversion_manufacturer_pie_v2",'robotfirmwareversion.manufacturer_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_manufacturer_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 制造商 ******************** pie_v1***/ init_echart("echart_robotfirmwareversion_manufacturer_pie_v1",'robotfirmwareversion.manufacturer_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_manufacturer_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 制造商 ******************** pie***/ init_echart("echart_robotfirmwareversion_manufacturer_pie",'robotfirmwareversion.manufacturer_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareversion_manufacturer_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 制造商 ******************** line***/ init_echart("echart_robotfirmwareversion_manufacturer_line",'robotfirmwareversion.manufacturer_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_manufacturer_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 制造商 ******************** bar***/ init_echart("echart_robotfirmwareversion_manufacturer_bar",'robotfirmwareversion.manufacturer_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_manufacturer_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 制造商 ******************** bar_v1***/ init_echart("echart_robotfirmwareversion_manufacturer_bar_v1",'robotfirmwareversion.manufacturer_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_compatibility_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 兼容性说明 ******************** pie_v2***/ init_echart("echart_robotfirmwareversion_compatibility_pie_v2",'robotfirmwareversion.compatibility_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_compatibility_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 兼容性说明 ******************** pie_v1***/ init_echart("echart_robotfirmwareversion_compatibility_pie_v1",'robotfirmwareversion.compatibility_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_compatibility_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 兼容性说明 ******************** pie***/ init_echart("echart_robotfirmwareversion_compatibility_pie",'robotfirmwareversion.compatibility_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareversion_compatibility_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 兼容性说明 ******************** line***/ init_echart("echart_robotfirmwareversion_compatibility_line",'robotfirmwareversion.compatibility_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_compatibility_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 兼容性说明 ******************** bar***/ init_echart("echart_robotfirmwareversion_compatibility_bar",'robotfirmwareversion.compatibility_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_compatibility_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 兼容性说明 ******************** bar_v1***/ init_echart("echart_robotfirmwareversion_compatibility_bar_v1",'robotfirmwareversion.compatibility_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_downloadurl_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 下载链接 ******************** pie_v2***/ init_echart("echart_robotfirmwareversion_downloadurl_pie_v2",'robotfirmwareversion.downloadurl_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_downloadurl_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 下载链接 ******************** pie_v1***/ init_echart("echart_robotfirmwareversion_downloadurl_pie_v1",'robotfirmwareversion.downloadurl_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_downloadurl_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 下载链接 ******************** pie***/ init_echart("echart_robotfirmwareversion_downloadurl_pie",'robotfirmwareversion.downloadurl_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareversion_downloadurl_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 下载链接 ******************** line***/ init_echart("echart_robotfirmwareversion_downloadurl_line",'robotfirmwareversion.downloadurl_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_downloadurl_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 下载链接 ******************** bar***/ init_echart("echart_robotfirmwareversion_downloadurl_bar",'robotfirmwareversion.downloadurl_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_downloadurl_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 下载链接 ******************** bar_v1***/ init_echart("echart_robotfirmwareversion_downloadurl_bar_v1",'robotfirmwareversion.downloadurl_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件描述 ******************** pie_v2***/ init_echart("echart_robotfirmwareversion_description_pie_v2",'robotfirmwareversion.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件描述 ******************** pie_v1***/ init_echart("echart_robotfirmwareversion_description_pie_v1",'robotfirmwareversion.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_robotfirmwareversion_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件描述 ******************** pie***/ init_echart("echart_robotfirmwareversion_description_pie",'robotfirmwareversion.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_robotfirmwareversion_description_line" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件描述 ******************** line***/ init_echart("echart_robotfirmwareversion_description_line",'robotfirmwareversion.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件描述 ******************** bar***/ init_echart("echart_robotfirmwareversion_description_bar",'robotfirmwareversion.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_robotfirmwareversion_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 机器人固件版本表 固件描述 ******************** bar_v1***/ init_echart("echart_robotfirmwareversion_description_bar_v1",'robotfirmwareversion.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

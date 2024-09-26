@@ -1,0 +1,1039 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+机器人固件版本表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>机器人固件版本表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tprobotfirmwareversion" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row">
+<form action="" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="robotmokwkwdelid">机器人模型ID关联字段(robotmokwkwdelid)</label>
+<select name="robotmokwkwdelid_search" id="robotmokwkwdelid_search">
+<option value="">未选择</option>
+{% for record in data_mc_robotinfo_55760 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/robotfirmwareversion">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_firmwareid.mcauthview %}
+<td>
+固件ID
+</td>
+{% endif %}
+
+{% if mcauthfield_firmwareversion.mcauthview %}
+<td>
+固件版本号
+</td>
+{% endif %}
+
+{% if mcauthfield_relekwkwasedate.mcauthview %}
+<td>
+发布日期
+</td>
+{% endif %}
+
+{% if mcauthfield_manufacturer.mcauthview %}
+<td>
+制造商
+</td>
+{% endif %}
+
+{% if mcauthfield_compatibility.mcauthview %}
+<td>
+兼容性说明
+</td>
+{% endif %}
+
+{% if mcauthfield_filesize.mcauthview %}
+<td>
+文件大小
+</td>
+{% endif %}
+
+{% if mcauthfield_downloadurl.mcauthview %}
+<td>
+下载链接
+</td>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+<td>
+固件描述
+</td>
+{% endif %}
+
+{% if mcauthfield_robotmokwkwdelid.mcauthview %}
+<td>
+机器人模型ID关联字段
+</td>
+{% endif %}
+
+{% if mcauthfield_islatest.mcauthview %}
+<td>
+是否为最新版本
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_firmwareid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.firmwareid}}">
+{{record.firmwareid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_firmwareversion.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.firmwareversion}}">
+{{record.firmwareversion}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_relekwkwasedate.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.relekwkwasedate}}">
+{{record.relekwkwasedate}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_manufacturer.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.manufacturer}}">
+{{record.manufacturer}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_compatibility.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.compatibility}}">
+{{record.compatibility}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_filesize.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.filesize %}
+{{record.filesize.name}}
+<a href="{{record.filesize.url}}" target="_blank" download="download">下载</a>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_downloadurl.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.downloadurl}}">
+{{record.downloadurl}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_description.mcauthview %}
+<td class="text-nowrap-cell">
+
+{% if record.description %}
+{{record.description.name}}
+<p title="{{record.description}}">
+{{record.description|truncatechars:20}}
+</p>
+{% endif %}
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_robotmokwkwdelid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.robotmokwkwdelid}}">
+{{record.robotmokwkwdelid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_islatest.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.islatest}}">
+{{record.islatest}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_firmwareid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="firmwareid" class="form-label form-group">固件ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_firmwareversion.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="firmwareversion" class="form-label form-group">固件版本号</label>
+
+<input type="text" class="form-control form-control-lg" name="firmwareversion" id="firmwareversion"{% if not mcauthfield_firmwareversion.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_relekwkwasedate.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="relekwkwasedate" class="form-label form-group">发布日期</label>
+
+<input type="date" class="form-control form-control-lg" name="relekwkwasedate" id="relekwkwasedate" {% if not mcauthfield_relekwkwasedate.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_manufacturer.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="manufacturer" class="form-label form-group">制造商</label>
+
+<input type="text" class="form-control form-control-lg" name="manufacturer" id="manufacturer"{% if not mcauthfield_manufacturer.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_compatibility.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="compatibility" class="form-label form-group">兼容性说明</label>
+
+<input type="text" class="form-control form-control-lg" name="compatibility" id="compatibility"{% if not mcauthfield_compatibility.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_filesize.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="filesize" class="form-label form-group">文件大小</label>
+
+<input type="file" class="form-control form-control-lg" name="filesize" id="filesize" onchange="uploadfile(e)" {% if not mcauthfield_filesize.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_downloadurl.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="downloadurl" class="form-label form-group">下载链接</label>
+
+<input type="url" class="form-control form-control-lg" name="downloadurl" id="downloadurl" {% if not mcauthfield_downloadurl.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_description.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="description" class="form-label form-group">固件描述</label>
+
+<textarea class="form-control form-control-lg" name="description" id="description" {% if not mcauthfield_description.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_robotmokwkwdelid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="robotmokwkwdelid" class="form-label form-group">机器人模型ID关联字段</label>
+
+<select class="form-select form-select-lg mb-3" name="robotmokwkwdelid" id="robotmokwkwdelid" {% if not mcauthfield_robotmokwkwdelid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_robotinfo_55760 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_islatest.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="islatest" class="form-label form-group">是否为最新版本</label>
+
+<select class="form-select form-select-lg mb-3" name="islatest" id="islatest" {% if not mcauthfield_islatest.mcisblank %}required {% endif %} data-name="insert">
+<option value="True" selected >是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_firmwareid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="firmwareid_upd"
+class="form-label form-group">
+固件ID(firmwareid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_firmwareversion.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="firmwareversion_upd"
+class="form-label form-group">
+固件版本号(firmwareversion)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="firmwareversion"
+id="firmwareversion_upd"
+placeholder="固件版本号"
+{% if not mcauthfield_firmwareversion.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_firmwareversion.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_relekwkwasedate.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="relekwkwasedate_upd"
+class="form-label form-group">
+发布日期(relekwkwasedate)
+</label>
+
+<input type="date" class="validate form-control form-control-lg"
+name="relekwkwasedate"
+id="relekwkwasedate_upd"
+placeholder="发布日期"
+{% if not mcauthfield_relekwkwasedate.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_relekwkwasedate.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_manufacturer.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="manufacturer_upd"
+class="form-label form-group">
+制造商(manufacturer)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="manufacturer"
+id="manufacturer_upd"
+placeholder="制造商"
+{% if not mcauthfield_manufacturer.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_manufacturer.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_compatibility.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="compatibility_upd"
+class="form-label form-group">
+兼容性说明(compatibility)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="compatibility"
+id="compatibility_upd"
+placeholder="兼容性说明"
+{% if not mcauthfield_compatibility.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_compatibility.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_filesize.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="filesize_upd"
+class="form-label form-group">
+文件大小(filesize)
+</label>
+
+<input type="file" class="validate form-control form-control-lg"
+name="filesize"
+id="filesize_upd"
+placeholder="文件大小"
+{% if not mcauthfield_filesize.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_filesize.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_downloadurl.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="downloadurl_upd"
+class="form-label form-group">
+下载链接(downloadurl)
+</label>
+
+<input type="url" class="validate form-control form-control-lg"
+name="downloadurl"
+id="downloadurl_upd"
+placeholder="下载链接"
+{% if not mcauthfield_downloadurl.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_downloadurl.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_description.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="description_upd"
+class="form-label form-group">
+固件描述(description)
+</label>
+
+<textarea type="text" class="validate form-control form-control-lg"
+name="description"
+id="description_upd"
+placeholder="固件描述"
+{% if not mcauthfield_description.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_description.mcauthchange %}
+readonly
+{% endif %}
+data-name="update"></textarea>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_robotmokwkwdelid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="robotmokwkwdelid_upd"
+class="form-label form-group">
+机器人模型ID关联字段(robotmokwkwdelid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="robotmokwkwdelid"
+id="robotmokwkwdelid_upd"
+{% if not mcauthfield_robotmokwkwdelid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_robotmokwkwdelid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_robotinfo_55760 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_islatest.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="islatest_upd"
+class="form-label form-group">
+是否为最新版本(islatest)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="islatest"
+id="islatest_upd"
+{% if not mcauthfield_islatest.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_islatest.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="True" selected>是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_firmwareid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">固件ID</p>
+
+<p id="firmwareid_view">
+{{record.firmwareid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_firmwareversion.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">固件版本号</p>
+
+<p id="firmwareversion_view">
+{{record.firmwareversion|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_relekwkwasedate.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">发布日期</p>
+
+<p id="relekwkwasedate_view">
+{{record.relekwkwasedate|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_manufacturer.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">制造商</p>
+
+<p id="manufacturer_view">
+{{record.manufacturer|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_compatibility.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">兼容性说明</p>
+
+<p id="compatibility_view">
+{{record.compatibility|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_filesize.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">文件大小</p>
+
+<p id="filesize_view">
+{{record.filesize.name }}
+</p>
+<a id="filesize_view_a" href="{{record.filesize.url }}" target="_blank"
+download="download">
+下载
+</a>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_downloadurl.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">下载链接</p>
+
+<p id="downloadurl_view">
+</p>
+<a id="downloadurl_view_a" href="{{record.downloadurl }}" target="_blank">
+访问
+</a>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_description.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">固件描述</p>
+
+<p id="description_view">
+{{record.description|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_robotmokwkwdelid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">机器人模型ID关联字段</p>
+
+<p id="robotmokwkwdelid_view">
+{{record.robotmokwkwdelid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_islatest.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">是否为最新版本</p>
+
+<p id="islatest_view">
+{{record.islatest|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/robotfirmwareversion";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/robotfirmwareversion',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_firmwareid.mcauthview %}
+$("#firmwareid_upd").val(resp.ins.firmwareid);
+{% endif %}
+
+{% if mcauthfield_firmwareversion.mcauthview %}
+$("#firmwareversion_upd").val(resp.ins.firmwareversion);
+{% endif %}
+
+{% if mcauthfield_relekwkwasedate.mcauthview %}
+$("#relekwkwasedate_upd").val(resp.ins.relekwkwasedate);
+{% endif %}
+
+{% if mcauthfield_manufacturer.mcauthview %}
+$("#manufacturer_upd").val(resp.ins.manufacturer);
+{% endif %}
+
+{% if mcauthfield_compatibility.mcauthview %}
+$("#compatibility_upd").val(resp.ins.compatibility);
+{% endif %}
+
+{% if mcauthfield_filesize.mcauthview %}
+$("#filesize_upd").val(resp.ins.filesize);
+{% endif %}
+
+{% if mcauthfield_downloadurl.mcauthview %}
+$("#downloadurl_upd").val(resp.ins.downloadurl);
+{% endif %}
+
+{% if mcauthfield_description.mcauthview %}
+$("#description_upd").val(resp.ins.description);
+{% endif %}
+
+{% if mcauthfield_robotmokwkwdelid.mcauthview %}
+$("#robotmokwkwdelid_upd").val(resp.ins.robotmokwkwdelid);
+{% endif %}
+
+{% if mcauthfield_islatest.mcauthview %}
+$("#islatest_upd").val(resp.ins.islatest);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_firmwareid.mcauthchange %}
+firmwareid:$("#firmwareid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_firmwareversion.mcauthchange %}
+firmwareversion:$("#firmwareversion_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_relekwkwasedate.mcauthchange %}
+relekwkwasedate:$("#relekwkwasedate_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_manufacturer.mcauthchange %}
+manufacturer:$("#manufacturer_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_compatibility.mcauthchange %}
+compatibility:$("#compatibility_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_filesize.mcauthchange %}
+filesize:$("#filesize_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_downloadurl.mcauthchange %}
+downloadurl:$("#downloadurl_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_description.mcauthchange %}
+description:$("#description_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_robotmokwkwdelid.mcauthchange %}
+robotmokwkwdelid:$("#robotmokwkwdelid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_islatest.mcauthchange %}
+islatest:$("#islatest_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/robotfirmwareversion',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/robotfirmwareversion',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_firmwareid.mcauthview %}
+document.getElementById("firmwareid_view").innerHTML=resp.ins.firmwareid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_firmwareversion.mcauthview %}
+document.getElementById("firmwareversion_view").innerHTML=resp.ins.firmwareversion;
+{% endif %}
+
+
+
+
+{% if mcauthfield_relekwkwasedate.mcauthview %}
+document.getElementById("relekwkwasedate_view").innerHTML=resp.ins.relekwkwasedate;
+{% endif %}
+
+
+
+
+{% if mcauthfield_manufacturer.mcauthview %}
+document.getElementById("manufacturer_view").innerHTML=resp.ins.manufacturer;
+{% endif %}
+
+
+
+
+{% if mcauthfield_compatibility.mcauthview %}
+document.getElementById("compatibility_view").innerHTML=resp.ins.compatibility;
+{% endif %}
+
+
+
+
+{% if mcauthfield_filesize.mcauthview %}
+document.getElementById("filesize_view").innerHTML=resp.ins.filesize.name;
+document.getElementById("filesize_view_a").href=resp.ins.filesize.url;
+{% endif %}
+
+
+
+
+{% if mcauthfield_downloadurl.mcauthview %}
+document.getElementById("downloadurl_view").innerHTML=resp.ins.downloadurl;
+document.getElementById("downloadurl_view_a").href=resp.ins.downloadurl;
+{% endif %}
+
+
+
+
+{% if mcauthfield_description.mcauthview %}
+document.getElementById("description_view").innerHTML=resp.ins.description;
+{% endif %}
+
+
+
+
+{% if mcauthfield_robotmokwkwdelid.mcauthview %}
+document.getElementById("robotmokwkwdelid_view").innerHTML=resp.ins.robotmokwkwdelid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_islatest.mcauthview %}
+document.getElementById("islatest_view").innerHTML=resp.ins.islatest;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/robotfirmwareversion',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

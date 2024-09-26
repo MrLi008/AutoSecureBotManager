@@ -1,0 +1,415 @@
+{% extends 'tp.html' %}
+
+{% block title %}
+beta_基于django的自动化生产线智能机器人安全监控管理系统
+
+{% endblock %}
+{% block header-image %}
+
+{% endblock %}
+
+{% block body %}
+
+<h1 hidden>
+    标注-用于区分表名
+机器人故障表
+</h1>
+
+<div class="container my-container-margin">
+    <div class="row">
+        <div class="col s6">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                机器人故障表
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container my-container-margin">
+    <div class="tab-content" id="myTabContent">
+        
+<div class="tab-pane fade show " id="t-8128-tab-pane" role="tabpanel" aria-labelledby="t-8128-tab" tabindex="0">
+机器人信息表
+<div>
+<a href="/config_busi/robotinfo" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8129-tab-pane" role="tabpanel" aria-labelledby="t-8129-tab" tabindex="0">
+生产线信息表
+<div>
+<a href="/config_busi/productionlkwkwineinfo" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8130-tab-pane" role="tabpanel" aria-labelledby="t-8130-tab" tabindex="0">
+安全监控日志表
+<div>
+<a href="/config_busi/safetymonitkwkworlog" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8131-tab-pane" role="tabpanel" aria-labelledby="t-8131-tab" tabindex="0">
+报警记录表
+<div>
+<a href="/config_busi/alarmreckwkword" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8132-tab-pane" role="tabpanel" aria-labelledby="t-8132-tab" tabindex="0">
+机器人位置表
+<div>
+<a href="/config_busi/robotlocation" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8133-tab-pane" role="tabpanel" aria-labelledby="t-8133-tab" tabindex="0">
+机器人状态表
+<div>
+<a href="/config_busi/robotstatus" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8134-tab-pane" role="tabpanel" aria-labelledby="t-8134-tab" tabindex="0">
+机器人任务表
+<div>
+<a href="/config_busi/robottkwkwask" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8135-tab-pane" role="tabpanel" aria-labelledby="t-8135-tab" tabindex="0">
+生产线配置表
+<div>
+<a href="/config_busi/productionlkwkwineconfig" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8136-tab-pane" role="tabpanel" aria-labelledby="t-8136-tab" tabindex="0">
+权限管理表
+<div>
+<a href="/config_busi/permkwkwissionmanagement" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8137-tab-pane" role="tabpanel" aria-labelledby="t-8137-tab" tabindex="0">
+用户信息表
+<div>
+<a href="/config_busi/userinfo" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8138-tab-pane" role="tabpanel" aria-labelledby="t-8138-tab" tabindex="0">
+角色信息表
+<div>
+<a href="/config_busi/roleinfo" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8139-tab-pane" role="tabpanel" aria-labelledby="t-8139-tab" tabindex="0">
+用户角色关联表
+<div>
+<a href="/config_busi/userrolerelation" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8140-tab-pane" role="tabpanel" aria-labelledby="t-8140-tab" tabindex="0">
+机器人故障表
+<div>
+<a href="/config_busi/robotfault" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8141-tab-pane" role="tabpanel" aria-labelledby="t-8141-tab" tabindex="0">
+维修记录表
+<div>
+<a href="/config_busi/makwkwintenancereckwkword" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8142-tab-pane" role="tabpanel" aria-labelledby="t-8142-tab" tabindex="0">
+机器人型号表
+<div>
+<a href="/config_busi/robotmokwkwdel" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8143-tab-pane" role="tabpanel" aria-labelledby="t-8143-tab" tabindex="0">
+传感器信息表
+<div>
+<a href="/config_busi/senskwkworinfo" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8144-tab-pane" role="tabpanel" aria-labelledby="t-8144-tab" tabindex="0">
+传感器数据表
+<div>
+<a href="/config_busi/senskwkwordata" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8145-tab-pane" role="tabpanel" aria-labelledby="t-8145-tab" tabindex="0">
+监控摄像头信息表
+<div>
+<a href="/config_busi/camerainfo" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8146-tab-pane" role="tabpanel" aria-labelledby="t-8146-tab" tabindex="0">
+视频录像表
+<div>
+<a href="/config_busi/videoreckwkword" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8147-tab-pane" role="tabpanel" aria-labelledby="t-8147-tab" tabindex="0">
+机器人操作日志表
+<div>
+<a href="/config_busi/robotoperationlog" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8148-tab-pane" role="tabpanel" aria-labelledby="t-8148-tab" tabindex="0">
+生产线效率统计表
+<div>
+<a href="/config_busi/productionlkwkwineefficiency" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8149-tab-pane" role="tabpanel" aria-labelledby="t-8149-tab" tabindex="0">
+机器人固件更新表
+<div>
+<a href="/config_busi/robotfirmwareupdate" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8150-tab-pane" role="tabpanel" aria-labelledby="t-8150-tab" tabindex="0">
+机器人固件版本表
+<div>
+<a href="/config_busi/robotfirmwareversion" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8151-tab-pane" role="tabpanel" aria-labelledby="t-8151-tab" tabindex="0">
+生产线安全规则表
+<div>
+<a href="/config_busi/productionlkwkwinesafetyrule" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8152-tab-pane" role="tabpanel" aria-labelledby="t-8152-tab" tabindex="0">
+机器人安全配置表
+<div>
+<a href="/config_busi/robotsafetyconfig" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8153-tab-pane" role="tabpanel" aria-labelledby="t-8153-tab" tabindex="0">
+机器人巡检计划表
+<div>
+<a href="/config_busi/robotinspectionplan" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8154-tab-pane" role="tabpanel" aria-labelledby="t-8154-tab" tabindex="0">
+巡检结果表
+<div>
+<a href="/config_busi/inspectionresult" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8155-tab-pane" role="tabpanel" aria-labelledby="t-8155-tab" tabindex="0">
+机器人维护周期表
+<div>
+<a href="/config_busi/robotmakwkwintenancecycle" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8156-tab-pane" role="tabpanel" aria-labelledby="t-8156-tab" tabindex="0">
+生产线停机记录表
+<div>
+<a href="/config_busi/productionlkwkwinedowntimereckwkword" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8157-tab-pane" role="tabpanel" aria-labelledby="t-8157-tab" tabindex="0">
+机器人权限分配表
+<div>
+<a href="/config_busi/robotpermkwkwissionassignment" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+<div class="tab-pane fade show " id="t-8158-tab-pane" role="tabpanel" aria-labelledby="t-8158-tab" tabindex="0">
+系统管理员
+<div>
+<a href="/config_busi/supermanager" target="_blank">
+查看数据
+</a>
+</div>
+</div>
+
+
+    </div>
+</div>
+
+
+        {% if mcauthfield_faultid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="faultid" class="form-label form-group">故障ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_robotid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="robotid" class="form-label form-group">机器人ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_faulttype.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="faulttype" class="form-label form-group">故障类型</label>
+
+<input type="text" class="form-control form-control-lg" name="faulttype" id="faulttype"{% if not mcauthfield_faulttype.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_faultdescription.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="faultdescription" class="form-label form-group">故障描述</label>
+
+<textarea class="form-control form-control-lg" name="faultdescription" id="faultdescription" {% if not mcauthfield_faultdescription.mcisblank %}required {% endif %}data-name="insert"></textarea>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_faulttime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="faulttime" class="form-label form-group">故障时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairstatus.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairstatus" class="form-label form-group">维修状态</label>
+
+<input type="text" class="form-control form-control-lg" name="repairstatus" id="repairstatus"{% if not mcauthfield_repairstatus.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairtime" class="form-label form-group">维修时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairperson.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairperson" class="form-label form-group">维修人员</label>
+
+<input type="text" class="form-control form-control-lg" name="repairperson" id="repairperson"{% if not mcauthfield_repairperson.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_faultseverity.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="faultseverity" class="form-label form-group">故障严重程度</label>
+
+<input type="text" class="form-control form-control-lg" name="faultseverity" id="faultseverity"{% if not mcauthfield_faultseverity.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_relatedcomponent.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="relatedcomponent" class="form-label form-group">关联组件</label>
+
+<select class="form-select form-select-lg mb-3" name="relatedcomponent" id="relatedcomponent" {% if not mcauthfield_relatedcomponent.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_robotfault_55663 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+
+{% endblock %}
+
+{% block footer %}
+
+CopyRight ©beta_基于django的自动化生产线智能机器人安全监控管理系统 vm780_bb1ff2b101947be5
+
+{% endblock %}
+
+{% block script-footer %}
+
+{% endblock %}
+

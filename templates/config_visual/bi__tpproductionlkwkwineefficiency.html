@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 生产线效率统计表(productionlkwkwineefficiency)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_efficiencyrate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 效率率 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_efficiencyrate_pie_v2",'productionlkwkwineefficiency.efficiencyrate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_efficiencyrate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 效率率 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_efficiencyrate_pie_v1",'productionlkwkwineefficiency.efficiencyrate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_efficiencyrate_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 效率率 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_efficiencyrate_pie",'productionlkwkwineefficiency.efficiencyrate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_efficiencyrate_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 效率率 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_efficiencyrate_line",'productionlkwkwineefficiency.efficiencyrate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_efficiencyrate_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 效率率 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_efficiencyrate_bar",'productionlkwkwineefficiency.efficiencyrate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_efficiencyrate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 效率率 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_efficiencyrate_bar_v1",'productionlkwkwineefficiency.efficiencyrate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_dailyoutput_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 日产量 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_dailyoutput_pie_v2",'productionlkwkwineefficiency.dailyoutput_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_dailyoutput_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 日产量 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_dailyoutput_pie_v1",'productionlkwkwineefficiency.dailyoutput_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_dailyoutput_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 日产量 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_dailyoutput_pie",'productionlkwkwineefficiency.dailyoutput_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_dailyoutput_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 日产量 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_dailyoutput_line",'productionlkwkwineefficiency.dailyoutput_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_dailyoutput_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 日产量 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_dailyoutput_bar",'productionlkwkwineefficiency.dailyoutput_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_dailyoutput_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 日产量 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_dailyoutput_bar_v1",'productionlkwkwineefficiency.dailyoutput_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_downtimehours_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 停机时间小时 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_downtimehours_pie_v2",'productionlkwkwineefficiency.downtimehours_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_downtimehours_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 停机时间小时 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_downtimehours_pie_v1",'productionlkwkwineefficiency.downtimehours_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_downtimehours_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 停机时间小时 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_downtimehours_pie",'productionlkwkwineefficiency.downtimehours_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_downtimehours_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 停机时间小时 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_downtimehours_line",'productionlkwkwineefficiency.downtimehours_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_downtimehours_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 停机时间小时 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_downtimehours_bar",'productionlkwkwineefficiency.downtimehours_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_downtimehours_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 停机时间小时 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_downtimehours_bar_v1",'productionlkwkwineefficiency.downtimehours_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_makwkwintenancefrequency_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 维护频率 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_makwkwintenancefrequency_pie_v2",'productionlkwkwineefficiency.makwkwintenancefrequency_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_makwkwintenancefrequency_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 维护频率 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_makwkwintenancefrequency_pie_v1",'productionlkwkwineefficiency.makwkwintenancefrequency_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_makwkwintenancefrequency_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 维护频率 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_makwkwintenancefrequency_pie",'productionlkwkwineefficiency.makwkwintenancefrequency_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_makwkwintenancefrequency_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 维护频率 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_makwkwintenancefrequency_line",'productionlkwkwineefficiency.makwkwintenancefrequency_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_makwkwintenancefrequency_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 维护频率 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_makwkwintenancefrequency_bar",'productionlkwkwineefficiency.makwkwintenancefrequency_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_makwkwintenancefrequency_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 维护频率 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_makwkwintenancefrequency_bar_v1",'productionlkwkwineefficiency.makwkwintenancefrequency_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 上次维护日期 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_pie_v2",'productionlkwkwineefficiency.lkwkwastmakwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 上次维护日期 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_pie_v1",'productionlkwkwineefficiency.lkwkwastmakwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 上次维护日期 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_pie",'productionlkwkwineefficiency.lkwkwastmakwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 上次维护日期 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_line",'productionlkwkwineefficiency.lkwkwastmakwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 上次维护日期 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_bar",'productionlkwkwineefficiency.lkwkwastmakwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 上次维护日期 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_lkwkwastmakwkwintenancedate_bar_v1",'productionlkwkwineefficiency.lkwkwastmakwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_robotcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 机器人数量 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_robotcount_pie_v2",'productionlkwkwineefficiency.robotcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_robotcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 机器人数量 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_robotcount_pie_v1",'productionlkwkwineefficiency.robotcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_robotcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 机器人数量 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_robotcount_pie",'productionlkwkwineefficiency.robotcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_robotcount_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 机器人数量 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_robotcount_line",'productionlkwkwineefficiency.robotcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_robotcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 机器人数量 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_robotcount_bar",'productionlkwkwineefficiency.robotcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_robotcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 机器人数量 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_robotcount_bar_v1",'productionlkwkwineefficiency.robotcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_operatkwkworcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 操作人员数量 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_operatkwkworcount_pie_v2",'productionlkwkwineefficiency.operatkwkworcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_operatkwkworcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 操作人员数量 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_operatkwkworcount_pie_v1",'productionlkwkwineefficiency.operatkwkworcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_operatkwkworcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 操作人员数量 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_operatkwkworcount_pie",'productionlkwkwineefficiency.operatkwkworcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_operatkwkworcount_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 操作人员数量 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_operatkwkworcount_line",'productionlkwkwineefficiency.operatkwkworcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_operatkwkworcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 操作人员数量 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_operatkwkworcount_bar",'productionlkwkwineefficiency.operatkwkworcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_operatkwkworcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 操作人员数量 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_operatkwkworcount_bar_v1",'productionlkwkwineefficiency.operatkwkworcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_productdefectrate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 产品缺陷率 ******************** pie_v2***/ init_echart("echart_productionlkwkwineefficiency_productdefectrate_pie_v2",'productionlkwkwineefficiency.productdefectrate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_productdefectrate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 产品缺陷率 ******************** pie_v1***/ init_echart("echart_productionlkwkwineefficiency_productdefectrate_pie_v1",'productionlkwkwineefficiency.productdefectrate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_productdefectrate_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 产品缺陷率 ******************** pie***/ init_echart("echart_productionlkwkwineefficiency_productdefectrate_pie",'productionlkwkwineefficiency.productdefectrate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_productdefectrate_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 产品缺陷率 ******************** line***/ init_echart("echart_productionlkwkwineefficiency_productdefectrate_line",'productionlkwkwineefficiency.productdefectrate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_productdefectrate_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 产品缺陷率 ******************** bar***/ init_echart("echart_productionlkwkwineefficiency_productdefectrate_bar",'productionlkwkwineefficiency.productdefectrate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineefficiency_productdefectrate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线效率统计表 产品缺陷率 ******************** bar_v1***/ init_echart("echart_productionlkwkwineefficiency_productdefectrate_bar_v1",'productionlkwkwineefficiency.productdefectrate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

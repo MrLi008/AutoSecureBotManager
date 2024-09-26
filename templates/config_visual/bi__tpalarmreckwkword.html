@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 报警记录表(alarmreckwkword)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警时间 ******************** pie_v2***/ init_echart("echart_alarmreckwkword_alarmtime_pie_v2",'alarmreckwkword.alarmtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警时间 ******************** pie_v1***/ init_echart("echart_alarmreckwkword_alarmtime_pie_v1",'alarmreckwkword.alarmtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警时间 ******************** pie***/ init_echart("echart_alarmreckwkword_alarmtime_pie",'alarmreckwkword.alarmtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtime_line" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警时间 ******************** line***/ init_echart("echart_alarmreckwkword_alarmtime_line",'alarmreckwkword.alarmtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警时间 ******************** bar***/ init_echart("echart_alarmreckwkword_alarmtime_bar",'alarmreckwkword.alarmtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警时间 ******************** bar_v1***/ init_echart("echart_alarmreckwkword_alarmtime_bar_v1",'alarmreckwkword.alarmtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtype_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警类型 ******************** pie_v2***/ init_echart("echart_alarmreckwkword_alarmtype_pie_v2",'alarmreckwkword.alarmtype_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtype_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警类型 ******************** pie_v1***/ init_echart("echart_alarmreckwkword_alarmtype_pie_v1",'alarmreckwkword.alarmtype_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtype_pie" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警类型 ******************** pie***/ init_echart("echart_alarmreckwkword_alarmtype_pie",'alarmreckwkword.alarmtype_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtype_line" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警类型 ******************** line***/ init_echart("echart_alarmreckwkword_alarmtype_line",'alarmreckwkword.alarmtype_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtype_bar" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警类型 ******************** bar***/ init_echart("echart_alarmreckwkword_alarmtype_bar",'alarmreckwkword.alarmtype_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmtype_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警类型 ******************** bar_v1***/ init_echart("echart_alarmreckwkword_alarmtype_bar_v1",'alarmreckwkword.alarmtype_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmlevel_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警等级 ******************** pie_v2***/ init_echart("echart_alarmreckwkword_alarmlevel_pie_v2",'alarmreckwkword.alarmlevel_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmlevel_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警等级 ******************** pie_v1***/ init_echart("echart_alarmreckwkword_alarmlevel_pie_v1",'alarmreckwkword.alarmlevel_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmlevel_pie" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警等级 ******************** pie***/ init_echart("echart_alarmreckwkword_alarmlevel_pie",'alarmreckwkword.alarmlevel_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmlevel_line" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警等级 ******************** line***/ init_echart("echart_alarmreckwkword_alarmlevel_line",'alarmreckwkword.alarmlevel_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmlevel_bar" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警等级 ******************** bar***/ init_echart("echart_alarmreckwkword_alarmlevel_bar",'alarmreckwkword.alarmlevel_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_alarmlevel_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警等级 ******************** bar_v1***/ init_echart("echart_alarmreckwkword_alarmlevel_bar_v1",'alarmreckwkword.alarmlevel_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_description_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警描述 ******************** pie_v2***/ init_echart("echart_alarmreckwkword_description_pie_v2",'alarmreckwkword.description_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_description_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警描述 ******************** pie_v1***/ init_echart("echart_alarmreckwkword_description_pie_v1",'alarmreckwkword.description_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_description_pie" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警描述 ******************** pie***/ init_echart("echart_alarmreckwkword_description_pie",'alarmreckwkword.description_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_alarmreckwkword_description_line" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警描述 ******************** line***/ init_echart("echart_alarmreckwkword_description_line",'alarmreckwkword.description_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_description_bar" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警描述 ******************** bar***/ init_echart("echart_alarmreckwkword_description_bar",'alarmreckwkword.description_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_description_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警描述 ******************** bar_v1***/ init_echart("echart_alarmreckwkword_description_bar_v1",'alarmreckwkword.description_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_resolvedtime_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 解决时间 ******************** pie_v2***/ init_echart("echart_alarmreckwkword_resolvedtime_pie_v2",'alarmreckwkword.resolvedtime_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_resolvedtime_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 解决时间 ******************** pie_v1***/ init_echart("echart_alarmreckwkword_resolvedtime_pie_v1",'alarmreckwkword.resolvedtime_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_resolvedtime_pie" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 解决时间 ******************** pie***/ init_echart("echart_alarmreckwkword_resolvedtime_pie",'alarmreckwkword.resolvedtime_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_alarmreckwkword_resolvedtime_line" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 解决时间 ******************** line***/ init_echart("echart_alarmreckwkword_resolvedtime_line",'alarmreckwkword.resolvedtime_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_resolvedtime_bar" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 解决时间 ******************** bar***/ init_echart("echart_alarmreckwkword_resolvedtime_bar",'alarmreckwkword.resolvedtime_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_resolvedtime_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 解决时间 ******************** bar_v1***/ init_echart("echart_alarmreckwkword_resolvedtime_bar_v1",'alarmreckwkword.resolvedtime_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_location_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警位置 ******************** pie_v2***/ init_echart("echart_alarmreckwkword_location_pie_v2",'alarmreckwkword.location_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_location_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警位置 ******************** pie_v1***/ init_echart("echart_alarmreckwkword_location_pie_v1",'alarmreckwkword.location_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_alarmreckwkword_location_pie" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警位置 ******************** pie***/ init_echart("echart_alarmreckwkword_location_pie",'alarmreckwkword.location_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_alarmreckwkword_location_line" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警位置 ******************** line***/ init_echart("echart_alarmreckwkword_location_line",'alarmreckwkword.location_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_location_bar" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警位置 ******************** bar***/ init_echart("echart_alarmreckwkword_location_bar",'alarmreckwkword.location_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_alarmreckwkword_location_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 报警记录表 报警位置 ******************** bar_v1***/ init_echart("echart_alarmreckwkword_location_bar_v1",'alarmreckwkword.location_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>beta_基于django的自动化生产线智能机器人安全监控管理系统</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <style>
+      body {
+        color: black;
+      }
+      .bkimg {
+        background-image: url('/static/imgs/default.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(90%);
+        filter: brightness(10%);
+        overflow: hidden;
+      }
+      .myechart_size {
+        height: 450px;
+      }
+      .myechart_size-height-full {
+        with: 95%;
+        height: 480px;
+      }
+    </style>
+    
+    {% include 'config_visual/function_echart.html' %}
+  </head>
+  <body>
+    <div class="bg-image" style="{% include 'config_visual/background.html' %}">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <h3 style="color:black; font-size: 30px; font-weight: bold;">beta_基于django的自动化生产线智能机器人安全监控管理系统 生产线信息表(productionlkwkwineinfo)</h3>
+        </div>
+      </div>
+      {% csrf_token %}
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_productionlkwkwinename_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线名称 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_productionlkwkwinename_pie_v2",'productionlkwkwineinfo.productionlkwkwinename_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_productionlkwkwinename_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线名称 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_productionlkwkwinename_pie_v1",'productionlkwkwineinfo.productionlkwkwinename_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_productionlkwkwinename_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线名称 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_productionlkwkwinename_pie",'productionlkwkwineinfo.productionlkwkwinename_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_productionlkwkwinename_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线名称 ******************** line***/ init_echart("echart_productionlkwkwineinfo_productionlkwkwinename_line",'productionlkwkwineinfo.productionlkwkwinename_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_productionlkwkwinename_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线名称 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_productionlkwkwinename_bar",'productionlkwkwineinfo.productionlkwkwinename_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_productionlkwkwinename_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线名称 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_productionlkwkwinename_bar_v1",'productionlkwkwineinfo.productionlkwkwinename_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_location_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线位置 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_location_pie_v2",'productionlkwkwineinfo.location_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_location_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线位置 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_location_pie_v1",'productionlkwkwineinfo.location_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_location_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线位置 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_location_pie",'productionlkwkwineinfo.location_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_location_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线位置 ******************** line***/ init_echart("echart_productionlkwkwineinfo_location_line",'productionlkwkwineinfo.location_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_location_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线位置 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_location_bar",'productionlkwkwineinfo.location_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_location_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 生产线位置 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_location_bar_v1",'productionlkwkwineinfo.location_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_creationdate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 创建日期 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_creationdate_pie_v2",'productionlkwkwineinfo.creationdate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_creationdate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 创建日期 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_creationdate_pie_v1",'productionlkwkwineinfo.creationdate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_creationdate_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 创建日期 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_creationdate_pie",'productionlkwkwineinfo.creationdate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_creationdate_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 创建日期 ******************** line***/ init_echart("echart_productionlkwkwineinfo_creationdate_line",'productionlkwkwineinfo.creationdate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_creationdate_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 创建日期 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_creationdate_bar",'productionlkwkwineinfo.creationdate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_creationdate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 创建日期 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_creationdate_bar_v1",'productionlkwkwineinfo.creationdate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_maxcapacity_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 最大产能 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_maxcapacity_pie_v2",'productionlkwkwineinfo.maxcapacity_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_maxcapacity_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 最大产能 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_maxcapacity_pie_v1",'productionlkwkwineinfo.maxcapacity_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_maxcapacity_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 最大产能 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_maxcapacity_pie",'productionlkwkwineinfo.maxcapacity_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_maxcapacity_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 最大产能 ******************** line***/ init_echart("echart_productionlkwkwineinfo_maxcapacity_line",'productionlkwkwineinfo.maxcapacity_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_maxcapacity_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 最大产能 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_maxcapacity_bar",'productionlkwkwineinfo.maxcapacity_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_maxcapacity_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 最大产能 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_maxcapacity_bar_v1",'productionlkwkwineinfo.maxcapacity_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_makwkwintenancecycle_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 维护周期 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_makwkwintenancecycle_pie_v2",'productionlkwkwineinfo.makwkwintenancecycle_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_makwkwintenancecycle_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 维护周期 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_makwkwintenancecycle_pie_v1",'productionlkwkwineinfo.makwkwintenancecycle_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_makwkwintenancecycle_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 维护周期 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_makwkwintenancecycle_pie",'productionlkwkwineinfo.makwkwintenancecycle_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_makwkwintenancecycle_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 维护周期 ******************** line***/ init_echart("echart_productionlkwkwineinfo_makwkwintenancecycle_line",'productionlkwkwineinfo.makwkwintenancecycle_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_makwkwintenancecycle_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 维护周期 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_makwkwintenancecycle_bar",'productionlkwkwineinfo.makwkwintenancecycle_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_makwkwintenancecycle_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 维护周期 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_makwkwintenancecycle_bar_v1",'productionlkwkwineinfo.makwkwintenancecycle_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 上次维护日期 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_pie_v2",'productionlkwkwineinfo.lkwkwastmakwkwintenancedate_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 上次维护日期 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_pie_v1",'productionlkwkwineinfo.lkwkwastmakwkwintenancedate_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 上次维护日期 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_pie",'productionlkwkwineinfo.lkwkwastmakwkwintenancedate_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 上次维护日期 ******************** line***/ init_echart("echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_line",'productionlkwkwineinfo.lkwkwastmakwkwintenancedate_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 上次维护日期 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_bar",'productionlkwkwineinfo.lkwkwastmakwkwintenancedate_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 上次维护日期 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_lkwkwastmakwkwintenancedate_bar_v1",'productionlkwkwineinfo.lkwkwastmakwkwintenancedate_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_robotcount_pie_v2" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 机器人数量 ******************** pie_v2***/ init_echart("echart_productionlkwkwineinfo_robotcount_pie_v2",'productionlkwkwineinfo.robotcount_pie_v2','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_robotcount_pie_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 机器人数量 ******************** pie_v1***/ init_echart("echart_productionlkwkwineinfo_robotcount_pie_v1",'productionlkwkwineinfo.robotcount_pie_v1','/config_visual/bi',{},);</script>
+<div class="col-sm-3"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_robotcount_pie" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 机器人数量 ******************** pie***/ init_echart("echart_productionlkwkwineinfo_robotcount_pie",'productionlkwkwineinfo.robotcount_pie','/config_visual/bi',{});</script>
+<div class="col-sm-5"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_robotcount_line" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 机器人数量 ******************** line***/ init_echart("echart_productionlkwkwineinfo_robotcount_line",'productionlkwkwineinfo.robotcount_line','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_robotcount_bar" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 机器人数量 ******************** bar***/ init_echart("echart_productionlkwkwineinfo_robotcount_bar",'productionlkwkwineinfo.robotcount_bar','/config_visual/bi',{});</script>
+<div class="col-sm-4"><div class="default-echart-border"><div id="echart_productionlkwkwineinfo_robotcount_bar_v1" class="myechart_size"></div></div></div>
+<script>/*** 生产线信息表 机器人数量 ******************** bar_v1***/ init_echart("echart_productionlkwkwineinfo_robotcount_bar_v1",'productionlkwkwineinfo.robotcount_bar_v1','/config_visual/bi',{},polar={radius: [30, '80%']});</script>
+</div>
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

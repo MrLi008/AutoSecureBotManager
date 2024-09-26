@@ -1,0 +1,929 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+生产线停机记录表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>生产线停机记录表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpproductionlkwkwinedowntimereckwkword" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row">
+<form action="" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/productionlkwkwinedowntimereckwkword">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_id.mcauthview %}
+<td>
+记录ID
+</td>
+{% endif %}
+
+{% if mcauthfield_productionlkwkwineid.mcauthview %}
+<td>
+生产线ID
+</td>
+{% endif %}
+
+{% if mcauthfield_downtimestarttime.mcauthview %}
+<td>
+停机开始时间
+</td>
+{% endif %}
+
+{% if mcauthfield_downtimeendtime.mcauthview %}
+<td>
+停机结束时间
+</td>
+{% endif %}
+
+{% if mcauthfield_downtimerekwkwason.mcauthview %}
+<td>
+停机原因
+</td>
+{% endif %}
+
+{% if mcauthfield_downtimeduration.mcauthview %}
+<td>
+停机时长分钟
+</td>
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthview %}
+<td>
+操作员ID
+</td>
+{% endif %}
+
+{% if mcauthfield_repairmanid.mcauthview %}
+<td>
+维修员ID
+</td>
+{% endif %}
+
+{% if mcauthfield_kwkwisresolved.mcauthview %}
+<td>
+是否已解决0未解决1已解决
+</td>
+{% endif %}
+
+{% if mcauthfield_remark.mcauthview %}
+<td>
+备注
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_id.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.id}}">
+{{record.id}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_productionlkwkwineid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.productionlkwkwineid}}">
+{{record.productionlkwkwineid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_downtimestarttime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.downtimestarttime}}">
+{{record.downtimestarttime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_downtimeendtime.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.downtimeendtime}}">
+{{record.downtimeendtime}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_downtimerekwkwason.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.downtimerekwkwason}}">
+{{record.downtimerekwkwason}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_downtimeduration.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.downtimeduration}}">
+{{record.downtimeduration}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_operatkwkworid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.operatkwkworid}}">
+{{record.operatkwkworid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_repairmanid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.repairmanid}}">
+{{record.repairmanid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_kwkwisresolved.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.kwkwisresolved}}">
+{{record.kwkwisresolved}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_remark.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.remark}}">
+{{record.remark}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_id.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="id" class="form-label form-group">记录ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_productionlkwkwineid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="productionlkwkwineid" class="form-label form-group">生产线ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_downtimestarttime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="downtimestarttime" class="form-label form-group">停机开始时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_downtimeendtime.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="downtimeendtime" class="form-label form-group">停机结束时间</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_downtimerekwkwason.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="downtimerekwkwason" class="form-label form-group">停机原因</label>
+
+<input type="text" class="form-control form-control-lg" name="downtimerekwkwason" id="downtimerekwkwason"{% if not mcauthfield_downtimerekwkwason.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_downtimeduration.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="downtimeduration" class="form-label form-group">停机时长分钟</label>
+
+<input type="text" class="form-control form-control-lg" name="downtimeduration" id="downtimeduration"{% if not mcauthfield_downtimeduration.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_operatkwkworid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="operatkwkworid" class="form-label form-group">操作员ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_repairmanid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="repairmanid" class="form-label form-group">维修员ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_kwkwisresolved.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="kwkwisresolved" class="form-label form-group">是否已解决0未解决1已解决</label>
+
+<select class="form-select form-select-lg mb-3" name="kwkwisresolved" id="kwkwisresolved" {% if not mcauthfield_kwkwisresolved.mcisblank %}required {% endif %} data-name="insert">
+<option value="True" selected >是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_remark.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="remark" class="form-label form-group">备注</label>
+
+<input type="text" class="form-control form-control-lg" name="remark" id="remark"{% if not mcauthfield_remark.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_id.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="id_upd"
+class="form-label form-group">
+记录ID(id)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_productionlkwkwineid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="productionlkwkwineid_upd"
+class="form-label form-group">
+生产线ID(productionlkwkwineid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_downtimestarttime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="downtimestarttime_upd"
+class="form-label form-group">
+停机开始时间(downtimestarttime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_downtimeendtime.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="downtimeendtime_upd"
+class="form-label form-group">
+停机结束时间(downtimeendtime)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_downtimerekwkwason.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="downtimerekwkwason_upd"
+class="form-label form-group">
+停机原因(downtimerekwkwason)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="downtimerekwkwason"
+id="downtimerekwkwason_upd"
+placeholder="停机原因"
+{% if not mcauthfield_downtimerekwkwason.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_downtimerekwkwason.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_downtimeduration.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="downtimeduration_upd"
+class="form-label form-group">
+停机时长分钟(downtimeduration)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="downtimeduration"
+id="downtimeduration_upd"
+placeholder="停机时长分钟"
+{% if not mcauthfield_downtimeduration.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_downtimeduration.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_operatkwkworid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="operatkwkworid_upd"
+class="form-label form-group">
+操作员ID(operatkwkworid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_repairmanid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="repairmanid_upd"
+class="form-label form-group">
+维修员ID(repairmanid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_kwkwisresolved.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="kwkwisresolved_upd"
+class="form-label form-group">
+是否已解决0未解决1已解决(kwkwisresolved)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="kwkwisresolved"
+id="kwkwisresolved_upd"
+{% if not mcauthfield_kwkwisresolved.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_kwkwisresolved.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="True" selected>是</option>
+<option value="False">否</option>
+</select>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_remark.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="remark_upd"
+class="form-label form-group">
+备注(remark)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="remark"
+id="remark_upd"
+placeholder="备注"
+{% if not mcauthfield_remark.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_remark.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_id.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">记录ID</p>
+
+<p id="id_view">
+{{record.id|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_productionlkwkwineid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">生产线ID</p>
+
+<p id="productionlkwkwineid_view">
+{{record.productionlkwkwineid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_downtimestarttime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">停机开始时间</p>
+
+<p id="downtimestarttime_view">
+{{record.downtimestarttime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_downtimeendtime.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">停机结束时间</p>
+
+<p id="downtimeendtime_view">
+{{record.downtimeendtime|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_downtimerekwkwason.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">停机原因</p>
+
+<p id="downtimerekwkwason_view">
+{{record.downtimerekwkwason|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_downtimeduration.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">停机时长分钟</p>
+
+<p id="downtimeduration_view">
+{{record.downtimeduration|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">操作员ID</p>
+
+<p id="operatkwkworid_view">
+{{record.operatkwkworid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_repairmanid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">维修员ID</p>
+
+<p id="repairmanid_view">
+{{record.repairmanid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_kwkwisresolved.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">是否已解决0未解决1已解决</p>
+
+<p id="kwkwisresolved_view">
+{{record.kwkwisresolved|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_remark.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">备注</p>
+
+<p id="remark_view">
+{{record.remark|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/productionlkwkwinedowntimereckwkword";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/productionlkwkwinedowntimereckwkword',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_id.mcauthview %}
+$("#id_upd").val(resp.ins.id);
+{% endif %}
+
+{% if mcauthfield_productionlkwkwineid.mcauthview %}
+$("#productionlkwkwineid_upd").val(resp.ins.productionlkwkwineid);
+{% endif %}
+
+{% if mcauthfield_downtimestarttime.mcauthview %}
+$("#downtimestarttime_upd").val(resp.ins.downtimestarttime);
+{% endif %}
+
+{% if mcauthfield_downtimeendtime.mcauthview %}
+$("#downtimeendtime_upd").val(resp.ins.downtimeendtime);
+{% endif %}
+
+{% if mcauthfield_downtimerekwkwason.mcauthview %}
+$("#downtimerekwkwason_upd").val(resp.ins.downtimerekwkwason);
+{% endif %}
+
+{% if mcauthfield_downtimeduration.mcauthview %}
+$("#downtimeduration_upd").val(resp.ins.downtimeduration);
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthview %}
+$("#operatkwkworid_upd").val(resp.ins.operatkwkworid);
+{% endif %}
+
+{% if mcauthfield_repairmanid.mcauthview %}
+$("#repairmanid_upd").val(resp.ins.repairmanid);
+{% endif %}
+
+{% if mcauthfield_kwkwisresolved.mcauthview %}
+$("#kwkwisresolved_upd").val(resp.ins.kwkwisresolved);
+{% endif %}
+
+{% if mcauthfield_remark.mcauthview %}
+$("#remark_upd").val(resp.ins.remark);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_id.mcauthchange %}
+id:$("#id_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_productionlkwkwineid.mcauthchange %}
+productionlkwkwineid:$("#productionlkwkwineid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_downtimestarttime.mcauthchange %}
+downtimestarttime:$("#downtimestarttime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_downtimeendtime.mcauthchange %}
+downtimeendtime:$("#downtimeendtime_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_downtimerekwkwason.mcauthchange %}
+downtimerekwkwason:$("#downtimerekwkwason_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_downtimeduration.mcauthchange %}
+downtimeduration:$("#downtimeduration_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_operatkwkworid.mcauthchange %}
+operatkwkworid:$("#operatkwkworid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_repairmanid.mcauthchange %}
+repairmanid:$("#repairmanid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_kwkwisresolved.mcauthchange %}
+kwkwisresolved:$("#kwkwisresolved_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_remark.mcauthchange %}
+remark:$("#remark_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/productionlkwkwinedowntimereckwkword',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/productionlkwkwinedowntimereckwkword',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_id.mcauthview %}
+document.getElementById("id_view").innerHTML=resp.ins.id;
+{% endif %}
+
+
+
+
+{% if mcauthfield_productionlkwkwineid.mcauthview %}
+document.getElementById("productionlkwkwineid_view").innerHTML=resp.ins.productionlkwkwineid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_downtimestarttime.mcauthview %}
+document.getElementById("downtimestarttime_view").innerHTML=resp.ins.downtimestarttime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_downtimeendtime.mcauthview %}
+document.getElementById("downtimeendtime_view").innerHTML=resp.ins.downtimeendtime;
+{% endif %}
+
+
+
+
+{% if mcauthfield_downtimerekwkwason.mcauthview %}
+document.getElementById("downtimerekwkwason_view").innerHTML=resp.ins.downtimerekwkwason;
+{% endif %}
+
+
+
+
+{% if mcauthfield_downtimeduration.mcauthview %}
+document.getElementById("downtimeduration_view").innerHTML=resp.ins.downtimeduration;
+{% endif %}
+
+
+
+
+{% if mcauthfield_operatkwkworid.mcauthview %}
+document.getElementById("operatkwkworid_view").innerHTML=resp.ins.operatkwkworid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_repairmanid.mcauthview %}
+document.getElementById("repairmanid_view").innerHTML=resp.ins.repairmanid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_kwkwisresolved.mcauthview %}
+document.getElementById("kwkwisresolved_view").innerHTML=resp.ins.kwkwisresolved;
+{% endif %}
+
+
+
+
+{% if mcauthfield_remark.mcauthview %}
+document.getElementById("remark_view").innerHTML=resp.ins.remark;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/productionlkwkwinedowntimereckwkword',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}

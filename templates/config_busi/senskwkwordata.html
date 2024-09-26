@@ -1,0 +1,934 @@
+{% extends '../tp.html' %}
+
+{% block title %}
+传感器数据表
+{% endblock %}
+
+{% block body %}
+  <div class="my-container-margin">
+    <div class="divider"></div>
+    {% csrf_token %}
+    <div class="section">
+      <h4>传感器数据表</h4>
+      <div>
+        <div class="row">
+          
+          {% if has_add %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalinsert" class="waves-effect waves-light btn">添加</button>
+          {% endif %}
+          <div class="divider"></div>
+        
+        
+          
+<div class="col-sm-10">
+</div>
+<div class="col-sm-2">
+<a href="/config_visual/bi_tpsenskwkwordata" target="_blank" class="waves-effect waves-light btn">
+统计分析
+</a>
+</div>
+        </div>  
+        <div class="section">
+          {% if record %}
+            <h3>Empty Data</h3>
+          {% else %}
+          
+<div class="row">
+<form action="" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+<label for="deviceid">设备ID关联字段指向产生数据的设备(deviceid)</label>
+<select name="deviceid_search" id="deviceid_search">
+<option value="">未选择</option>
+{% for record in data_mc_senskwkworinfo_55702 %}
+<option value="{{record.value}}">
+<p>{{record.value}}:{{record.label }}</p>
+</option>
+{% endfor %}
+</select>
+</div>
+
+
+<div class="col-sm-2">
+<button type="submit" class="btn btn-primary" >
+<i class="fas fa-search">搜索</i>
+</button>
+<a type="reset" class="btn btn-default" href="/config_busi/senskwkwordata">
+<i class="fas fa-eraser">重置</i>
+</a>
+</div>
+</form>
+
+          </div>
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  
+{% if mcauthfield_senskwkworid.mcauthview %}
+<td>
+传感器ID
+</td>
+{% endif %}
+
+{% if mcauthfield_timestamp.mcauthview %}
+<td>
+时间戳
+</td>
+{% endif %}
+
+{% if mcauthfield_temperature.mcauthview %}
+<td>
+温度
+</td>
+{% endif %}
+
+{% if mcauthfield_humidity.mcauthview %}
+<td>
+湿度
+</td>
+{% endif %}
+
+{% if mcauthfield_pressure.mcauthview %}
+<td>
+压力
+</td>
+{% endif %}
+
+{% if mcauthfield_vibration.mcauthview %}
+<td>
+振动强度
+</td>
+{% endif %}
+
+{% if mcauthfield_status.mcauthview %}
+<td>
+状态如正常、异常
+</td>
+{% endif %}
+
+{% if mcauthfield_location.mcauthview %}
+<td>
+位置
+</td>
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthview %}
+<td>
+设备ID关联字段指向产生数据的设备
+</td>
+{% endif %}
+<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for record in records %}
+                  <tr>
+                    
+ {% if mcauthfield_senskwkworid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.senskwkworid}}">
+{{record.senskwkworid}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_timestamp.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.timestamp}}">
+{{record.timestamp}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_temperature.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.temperature}}">
+{{record.temperature}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_humidity.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.humidity}}">
+{{record.humidity}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_pressure.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.pressure}}">
+{{record.pressure}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_vibration.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.vibration}}">
+{{record.vibration}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_status.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.status}}">
+{{record.status}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_location.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.location}}">
+{{record.location}}
+</p>
+
+</td>
+{% endif %}
+ 
+ {% if mcauthfield_deviceid.mcauthview %}
+<td class="text-nowrap-cell">
+
+<p title="{{record.deviceid}}">
+{{record.deviceid}}
+</p>
+
+</td>
+{% endif %}
+ <td>
+                      {% if has_upd %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalupdate">修改</button>
+                      {% endif %}
+                      {% if has_del %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalremove">删除</button>
+                      {% endif %}
+                      {% if has_view %}
+                        <button data-bs-data="{{ record.id }}" data-bs-toggle="modal" data-bs-target="#modalpreview">查看</button>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block modal %}
+  <!-- Modal Structure -->
+
+  {% if has_add %}
+    <div id="modalinsert" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">
+              <h4>添加</h4>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="add" hidden />{% csrf_token %}<div class="">
+        {% if mcauthfield_senskwkworid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="senskwkworid" class="form-label form-group">传感器ID</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_timestamp.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="timestamp" class="form-label form-group">时间戳</label>
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_temperature.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="temperature" class="form-label form-group">温度</label>
+
+<input type="text" class="form-control form-control-lg" name="temperature" id="temperature"{% if not mcauthfield_temperature.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_humidity.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="humidity" class="form-label form-group">湿度</label>
+
+<input type="text" class="form-control form-control-lg" name="humidity" id="humidity"{% if not mcauthfield_humidity.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_pressure.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="pressure" class="form-label form-group">压力</label>
+
+<input type="text" class="form-control form-control-lg" name="pressure" id="pressure"{% if not mcauthfield_pressure.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_vibration.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="vibration" class="form-label form-group">振动强度</label>
+
+<input type="text" class="form-control form-control-lg" name="vibration" id="vibration"{% if not mcauthfield_vibration.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_status.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="status" class="form-label form-group">状态如正常、异常</label>
+
+<input type="text" class="form-control form-control-lg" name="status" id="status"{% if not mcauthfield_status.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_location.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="location" class="form-label form-group">位置</label>
+
+<input type="text" class="form-control form-control-lg" name="location" id="location"{% if not mcauthfield_location.mcisblank %}required {% endif %}data-name="insert">
+
+</div>
+        {% endif %}
+
+        {% if mcauthfield_deviceid.mcauthchange  %}
+<div class="input-field col s12 mb-3">
+    <label for="deviceid" class="form-label form-group">设备ID关联字段指向产生数据的设备</label>
+
+<select class="form-select form-select-lg mb-3" name="deviceid" id="deviceid" {% if not mcauthfield_deviceid.mcisblank %}required {% endif %} data-name="insert"> <option value="" selected>未选择</option> {% for record in data_mc_senskwkworinfo_55702 %} 
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+ {% endfor %}
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-action modal-close btn-primary btn waves-effect waves-light">提交</button>
+                  <button type="reset" class="modal-action modal-close btn-default btn waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_upd %}
+    <div id="modalupdate" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">修改</div>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="upd" hidden />{% csrf_token %}<input type="text" name="_id_upd" value="" data-name="update_id" hidden />
+                <div class="">
+           {% if mcauthfield_senskwkworid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="senskwkworid_upd"
+class="form-label form-group">
+传感器ID(senskwkworid)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_timestamp.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="timestamp_upd"
+class="form-label form-group">
+时间戳(timestamp)
+</label>
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_temperature.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="temperature_upd"
+class="form-label form-group">
+温度(temperature)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="temperature"
+id="temperature_upd"
+placeholder="温度"
+{% if not mcauthfield_temperature.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_temperature.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_humidity.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="humidity_upd"
+class="form-label form-group">
+湿度(humidity)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="humidity"
+id="humidity_upd"
+placeholder="湿度"
+{% if not mcauthfield_humidity.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_humidity.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_pressure.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="pressure_upd"
+class="form-label form-group">
+压力(pressure)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="pressure"
+id="pressure_upd"
+placeholder="压力"
+{% if not mcauthfield_pressure.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_pressure.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_vibration.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="vibration_upd"
+class="form-label form-group">
+振动强度(vibration)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="vibration"
+id="vibration_upd"
+placeholder="振动强度"
+{% if not mcauthfield_vibration.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_vibration.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_status.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="status_upd"
+class="form-label form-group">
+状态如正常、异常(status)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="status"
+id="status_upd"
+placeholder="状态如正常、异常"
+{% if not mcauthfield_status.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_status.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_location.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="location_upd"
+class="form-label form-group">
+位置(location)
+</label>
+
+<input type="text" class="validate form-control form-control-lg"
+name="location"
+id="location_upd"
+placeholder="位置"
+{% if not mcauthfield_location.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_location.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+
+</div>
+        {% endif %}
+
+           {% if mcauthfield_deviceid.mcauthview %}
+<div class="input-field col s12 mb-3">
+        <label for="deviceid_upd"
+class="form-label form-group">
+设备ID关联字段指向产生数据的设备(deviceid)
+</label>
+
+<select class="form-select form-select-lg mb-3" name="deviceid"
+id="deviceid_upd"
+{% if not mcauthfield_deviceid.mcisblank %}
+required
+{% endif %}
+{% if not mcauthfield_deviceid.mcauthchange %}
+readonly
+{% endif %}
+data-name="update">
+<option value="">未选择</option>
+{% for record in data_mc_senskwkworinfo_55702 %}
+
+<option value="{{record.value}}">
+
+<p>{{record.value}}:{{record.label }}</p>
+
+</option>
+
+{% endfor %}
+</select>
+
+</div>
+        {% endif %}
+</div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">提交</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_del %}
+    <div id="modalremove" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>确认删除这条记录吗?</p>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <form action="" method="post" enctype="multipart/form-data" class="col s12">
+                <input type="text" name="optype" value="del" hidden />{% csrf_token %}<input type="text" name="_id" value="" data-name="remove" hidden />
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn modal-action modal-close btn-primary waves-effect waves-light">确认</button>
+                  <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">取消</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if has_view %}
+    <div id="modalpreview" class="modal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+          <h4>预览</h4>
+          <div class="">
+            
+{% if mcauthfield_senskwkworid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">传感器ID</p>
+
+<p id="senskwkworid_view">
+{{record.senskwkworid|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_timestamp.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">时间戳</p>
+
+<p id="timestamp_view">
+{{record.timestamp|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_temperature.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">温度</p>
+
+<p id="temperature_view">
+{{record.temperature|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_humidity.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">湿度</p>
+
+<p id="humidity_view">
+{{record.humidity|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_pressure.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">压力</p>
+
+<p id="pressure_view">
+{{record.pressure|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_vibration.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">振动强度</p>
+
+<p id="vibration_view">
+{{record.vibration|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_status.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">状态如正常、异常</p>
+
+<p id="status_view">
+{{record.status|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_location.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">位置</p>
+
+<p id="location_view">
+{{record.location|safe }}
+</p>
+
+</div>
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthview  %}
+<div class="input-field col s12 mb-3">
+    <p class="text-bodyform-label">设备ID关联字段指向产生数据的设备</p>
+
+<p id="deviceid_view">
+{{record.deviceid|safe }}
+</p>
+
+</div>
+{% endif %}
+<div class="modal-footer">
+              <button type="reset" class="btn modal-action modal-close btn-default waves-effect waves-light" data-bs-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script-footer %}
+<script>
+  function myreset(){
+window.location.href= "/config_busi/senskwkwordata";
+};
+if (document.getElementById("modalupdate")){
+document.getElementById("modalupdate").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/senskwkwordata',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+{% if mcauthfield_senskwkworid.mcauthview %}
+$("#senskwkworid_upd").val(resp.ins.senskwkworid);
+{% endif %}
+
+{% if mcauthfield_timestamp.mcauthview %}
+$("#timestamp_upd").val(resp.ins.timestamp);
+{% endif %}
+
+{% if mcauthfield_temperature.mcauthview %}
+$("#temperature_upd").val(resp.ins.temperature);
+{% endif %}
+
+{% if mcauthfield_humidity.mcauthview %}
+$("#humidity_upd").val(resp.ins.humidity);
+{% endif %}
+
+{% if mcauthfield_pressure.mcauthview %}
+$("#pressure_upd").val(resp.ins.pressure);
+{% endif %}
+
+{% if mcauthfield_vibration.mcauthview %}
+$("#vibration_upd").val(resp.ins.vibration);
+{% endif %}
+
+{% if mcauthfield_status.mcauthview %}
+$("#status_upd").val(resp.ins.status);
+{% endif %}
+
+{% if mcauthfield_location.mcauthview %}
+$("#location_upd").val(resp.ins.location);
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthview %}
+$("#deviceid_upd").val(resp.ins.deviceid);
+{% endif %}
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+function upd(_id){
+let data = {
+optype:'get',
+_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value,
+
+{% if mcauthfield_senskwkworid.mcauthchange %}
+senskwkworid:$("#senskwkworid_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_timestamp.mcauthchange %}
+timestamp:$("#timestamp_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_temperature.mcauthchange %}
+temperature:$("#temperature_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_humidity.mcauthchange %}
+humidity:$("#humidity_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_pressure.mcauthchange %}
+pressure:$("#pressure_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_vibration.mcauthchange %}
+vibration:$("#vibration_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_status.mcauthchange %}
+status:$("#status_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_location.mcauthchange %}
+location:$("#location_upd]").val(),
+{% endif %}
+
+{% if mcauthfield_deviceid.mcauthchange %}
+deviceid:$("#deviceid_upd]").val(),
+{% endif %}
+
+}
+$.ajax({
+url: '/config_busi/senskwkwordata',
+method: 'post',
+data: data,
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+if (document.getElementById("modalpreview")) {
+document.getElementById("modalpreview").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=update_id]").val(_id);
+$.ajax({
+url: '/config_busi/senskwkwordata',
+method: 'post',
+data: {optype:'get',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+
+
+
+{% if mcauthfield_senskwkworid.mcauthview %}
+document.getElementById("senskwkworid_view").innerHTML=resp.ins.senskwkworid;
+{% endif %}
+
+
+
+
+{% if mcauthfield_timestamp.mcauthview %}
+document.getElementById("timestamp_view").innerHTML=resp.ins.timestamp;
+{% endif %}
+
+
+
+
+{% if mcauthfield_temperature.mcauthview %}
+document.getElementById("temperature_view").innerHTML=resp.ins.temperature;
+{% endif %}
+
+
+
+
+{% if mcauthfield_humidity.mcauthview %}
+document.getElementById("humidity_view").innerHTML=resp.ins.humidity;
+{% endif %}
+
+
+
+
+{% if mcauthfield_pressure.mcauthview %}
+document.getElementById("pressure_view").innerHTML=resp.ins.pressure;
+{% endif %}
+
+
+
+
+{% if mcauthfield_vibration.mcauthview %}
+document.getElementById("vibration_view").innerHTML=resp.ins.vibration;
+{% endif %}
+
+
+
+
+{% if mcauthfield_status.mcauthview %}
+document.getElementById("status_view").innerHTML=resp.ins.status;
+{% endif %}
+
+
+
+
+{% if mcauthfield_location.mcauthview %}
+document.getElementById("location_view").innerHTML=resp.ins.location;
+{% endif %}
+
+
+
+
+{% if mcauthfield_deviceid.mcauthview %}
+document.getElementById("deviceid_view").innerHTML=resp.ins.deviceid;
+{% endif %}
+
+
+},
+error: err => {
+},
+complete: res => {
+},
+})
+});
+};
+if (document.getElementById("modalremove")) {
+document.getElementById("modalremove").addEventListener("show.bs.modal",event=>{
+let _id = event.relatedTarget.getAttribute('data-bs-data');
+$("input[data-name=remove]").val(_id);
+});
+};
+function del(_id){
+$.ajax({
+url: '/config_busi/senskwkwordata',
+method: 'post',
+data: {optype:'del',_id:_id,csrfmiddlewaretoken:document.querySelector('[name=csrfmiddlewaretoken]').value}, // JSON.stringify(data),
+dataType: 'json',
+success: resp => {
+console.log(resp);
+},
+error: err => {
+},
+complete: res => {
+},
+})
+};
+</script>
+{% endblock %}
